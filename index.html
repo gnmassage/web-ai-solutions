@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GN Web & AI Studio — პრემიუმ ვებ-გადაწყვეტილებები</title>
-    <meta name="description" content="ექსკლუზიური, მაღალი კონვერსიის AI-Ready საიტები მცირე და საშუალო ბიზნესისთვის.">
+    <title>GN Web & AI Studio — Digital Solutions</title>
+    <meta name="description" content="AI-Ready Landing Pages and Web Solutions for Small & Medium Businesses.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,13 +15,13 @@
             --bg-dark: #070a12;
             --bg-card: rgba(18, 24, 38, 0.6);
             --bg-card-hover: rgba(28, 37, 58, 0.8);
-            --primary: #6366f1; /* Electric Indigo */
+            --primary: #6366f1;
             --primary-glow: rgba(99, 102, 241, 0.25);
-            --accent: #10b981; /* Neon Emerald */
+            --accent: #10b981;
             --accent-glow: rgba(16, 185, 129, 0.25);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --border: rgba(255, 255, 255, 0.07);
+            --border: rgba(255, 255, 255, 0.08);
             --border-glow: rgba(99, 102, 241, 0.4);
         }
 
@@ -45,10 +45,10 @@
 
         /* Header */
         header {
-            background: rgba(7, 10, 18, 0.8);
+            background: rgba(7, 10, 18, 0.85);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
-            padding: 1.2rem 2rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -66,15 +66,47 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 3px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.3rem 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 7px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
         /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             background: linear-gradient(135deg, var(--primary), #4f46e5);
             color: white;
-            padding: 0.9rem 1.8rem;
+            padding: 0.85rem 1.6rem;
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
@@ -112,7 +144,7 @@
 
         /* Hero */
         .hero {
-            padding: 6rem 1.5rem 4rem;
+            padding: 5.5rem 1.5rem 4rem;
             text-align: center;
             max-width: 950px;
             margin: 0 auto;
@@ -133,8 +165,8 @@
         }
 
         .hero h1 {
-            font-size: 3.2rem;
-            line-height: 1.2;
+            font-size: 3rem;
+            line-height: 1.25;
             margin-bottom: 1.5rem;
             font-weight: 800;
             letter-spacing: -0.5px;
@@ -147,7 +179,7 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
             margin-bottom: 2.5rem;
             max-width: 720px;
@@ -198,7 +230,6 @@
             border-radius: 20px;
             backdrop-filter: blur(12px);
             transition: all 0.3s ease;
-            position: relative;
         }
 
         .card:hover {
@@ -275,18 +306,43 @@
             color: #a5b4fc;
         }
 
-        /* Visual Box */
         .visual-preview {
             background: rgba(15, 23, 42, 0.8);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 2rem;
+            padding: 2.5rem;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            min-height: 250px;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 600px;
+            margin: 2rem auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: left;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .contact-item:hover {
+            color: #818cf8;
         }
 
         /* Footer CTA */
@@ -311,6 +367,7 @@
             .hero h1 { font-size: 2.2rem; }
             .showcase-card { grid-template-columns: 1fr; text-align: center; padding: 2rem 1.5rem; }
             .pill-group { justify-content: center; }
+            header { flex-direction: column; gap: 1rem; }
         }
     </style>
 </head>
@@ -318,49 +375,56 @@
 
     <header>
         <div class="logo">GN WEB & AI</div>
-        <a href="https://wa.me/995500000000?text=%E1%83%92%E1%83%90%E1%83%9B%E1%83%90%E1%83%A0%E1%83%AF%E1%83%9D%E1%83%91%E1%83%90,%20%E1%83%9B%E1%83%90%E1%83%98%E1%83%9C%E1%83%A2%E1%83%94%E1%83%A0%E1%83%94%E1%83%A1%E1%83%94%E1%83%91%E1%83%A1%20%E1%83%A1%E1%83%90%E1%83%98%E1%83%A2%E1%83%98%E1%83%A1%20%E1%83%90%E1%83%AC%E1%83%A7%E1%83%9D%E1%83%91%E1%83%90" class="btn btn-emerald" target="_blank">
-            💬 WhatsApp კონსულტაცია
-        </a>
+        <div class="nav-right">
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="setLanguage('ka')">GE</button>
+                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
+            </div>
+            <a href="https://wa.me/995557998522?text=Gamarjoba" class="btn btn-emerald" target="_blank" id="nav-btn">
+                💬 WhatsApp
+            </a>
+        </div>
     </header>
 
     <section class="hero">
         <div class="badge-tag">
-            <span>✨</span> Next-Gen Web Solutions
+            <span>✨</span> <span id="hero-badge">Next-Gen Web Solutions</span>
         </div>
-        <h1>გადააქციეთ ვიზიტორები <span>მუდმივ კლიენტებად</span></h1>
-        <p>ვქმნით ექსკლუზიურ, ულტრა-სწრაფ საიტებს მცირე და საშუალო ბიზნესისთვის. ინტეგრირებული Google Maps, Direct ჩაწერა და Generative AI SEO.</p>
+        <h1 id="hero-title">გადააქციეთ ვიზიტორები <span>მუდმივ კლიენტებად</span></h1>
+        <p id="hero-desc">ვქმნით ექსკლუზიურ, ულტრა-სწრაფ საიტებს მცირე და საშუალო ბიზნესისთვის. ინტეგრირებული Google Maps, Direct ჩაწერა და Generative AI SEO.</p>
         <div class="hero-actions">
-            <a href="https://wa.me/995500000000?text=%E1%83%92%E1%83%90%E1%83%9B%E1%83%90%E1%83%A0%E1%83%AF%E1%83%9D%E1%83%91%E1%83%90,%20%E1%83%9B%E1%83%90%E1%83%98%E1%83%9C%E1%83%A2%E1%83%94%E1%83%A0%E1%83%94%E1%83%A1%E1%83%94%E1%83%91%E1%83%A1%20%E1%83%A1%E1%83%90%E1%83%98%E1%83%A2%E1%83%98%E1%83%A1%20%E1%83%90%E1%83%AC%E1%83%A7%E1%83%9D%E1%83%91%E1%83%90" class="btn btn-emerald" target="_blank">დაიწყეთ პროექტი დღესვე</a>
-            <a href="#case-study" class="btn btn-glass">ნახეთ ნამუშევარი ➔</a>
+            <a href="https://wa.me/995557998522?text=Gamarjoba" class="btn btn-emerald" target="_blank" id="hero-cta1">დაიწყეთ პროექტი დღესვე</a>
+            <a href="#case-study" class="btn btn-glass" id="hero-cta2">ნახეთ ნამუშევარი ➔</a>
         </div>
     </section>
 
     <div class="section-header">
-        <h2>რატომ ჩვენი ვებ-გადაწყვეტილებები?</h2>
-        <p>3 მთავარი კომპონენტი, რაც თქვენს ბიზნესს კონკურენტებისგან გამოარჩევს</p>
+        <h2 id="features-title">რატომ ჩვენი ვებ-გადაწყვეტილებები?</h2>
+        <p id="features-sub">3 მთავარი კომპონენტი, რაც თქვენს ბიზნესს კონკურენტებისგან გამოარჩევს</p>
     </div>
 
     <section class="grid">
         <div class="card">
             <div class="card-number">01 / Conversion</div>
-            <h3>1-Click Direct ჩაწერა</h3>
-            <p>მომხმარებელი 1 დაწკაპუნებით გადადის WhatsApp-ში ან რეკავს თქვენთან. აღარანაირი დაკარგული კლიენტი Direct-ში ლოდინის გამო.</p>
+            <h3 id="f1-title">1-Click Direct ჩაწერა</h3>
+            <p id="f1-desc">მომხმარებელი 1 დაწკაპუნებით გადადის WhatsApp-ში ან რეკავს თქვენთან. აღარანაირი დაკარგული კლიენტი Direct-ში ლოდინის გამო.</p>
         </div>
         <div class="card">
             <div class="card-number">02 / Intelligence</div>
-            <h3>Generative AI & GEO</h3>
-            <p>საიტის სტრუქტურა ეწყობა ისე, რომ ChatGPT-მ, Gemini-მ და Google Search-მა თქვენი ბიზნესი პირველ რეკომენდაციად დააფიქსირონ.</p>
+            <h3 id="f2-title">Generative AI & GEO</h3>
+            <p id="f2-desc">საიტის სტრუქტურა ეწყობა ისე, რომ ChatGPT-მ, Gemini-მ და Google Search-მა თქვენი ბიზნესი პირველ რეკომენდაციად დააფიქსირონ.</p>
         </div>
         <div class="card">
             <div class="card-number">03 / Presence</div>
-            <h3>Google Maps სინქრონიზაცია</h3>
-            <p>Google Business Profile-ის სრული გამართვა და საიტთან მიბმა ლოკალური კლიენტების უწყვეტი ნაკადისთვის.</p>
+            <h3 id="f3-title">Google Maps სინქრონიზაცია</h3>
+            <p id="f3-desc">Google Business Profile-ის სრული გამართვა და საიტთან მიბმა ლოკალური კლიენტების უწყვეტი ნაკადისთვის.</p>
         </div>
     </section>
 
     <div class="section-header" id="case-study">
-        <h2>რეალური ქეისი</h2>
-        <p>როგორ მუშაობს ჩვენი სისტემა პრაქტიკაში</p>
+        <h2 id="case-title">რეალური ქეისი</h2>
+        <p id="case-sub">როგორ მუშაობს ჩვენი სისტემა პრაქტიკაში</p>
     </div>
 
     <section class="showcase">
@@ -368,7 +432,7 @@
             <div class="showcase-info">
                 <span class="badge-tag">Featured Project</span>
                 <h3>GN Massage Tbilisi</h3>
-                <p>სპეციალიზებული სერვისული ბიზნესის ციფრული პლატფორმა: სტრუქტურირებული ფასები, ლოკაცია და სწრაფი ონლაინ ჩაწერა.</p>
+                <p id="case-desc">სპეციალიზებული სერვისული ბიზნესის ციფრული პლატფორმა: სტრუქტურირებული ფასები, ლოკაცია და სწრაფი ონლაინ ჩაწერა.</p>
                 
                 <div class="pill-group">
                     <span class="pill">⚡ 100% Mobile Optimized</span>
@@ -376,7 +440,7 @@
                     <span class="pill">💬 WhatsApp Booking</span>
                 </div>
 
-                <a href="https://gnmassage.github.io/gn-massage/" class="btn btn-glass" target="_blank">ცოცხალი საიტის ნახვა 🔗</a>
+                <a href="https://gnmassage.github.io/gn-massage/" class="btn btn-glass" target="_blank" id="case-link">ცოცხალი საიტის ნახვა 🔗</a>
             </div>
 
             <div class="visual-preview">
@@ -388,11 +452,19 @@
     </section>
 
     <section class="footer-cta">
-        <h2 style="font-size: 2.4rem; margin-bottom: 1rem;">მზად ხართ ციფრული ტრანსფორმაციისთვის?</h2>
-        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem; font-size: 1.1rem;">
+        <h2 style="font-size: 2.2rem; margin-bottom: 1rem;" id="cta-title">მზად ხართ ციფრული ტრანსფორმაციისთვის?</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; font-size: 1.05rem;" id="cta-sub">
             შევქმნათ უნიკალური, თქვენს ბიზნესზე მორგებული საიტი 2-3 დღეში.
         </p>
-        <a href="https://wa.me/995500000000?text=%E1%83%92%E1%83%90%E1%83%9B%E1%83%90%E1%83%A0%E1%83%AF%E1%83%9D%E1%83%91%E1%83%90,%20%E1%83%9B%E1%83%90%E1%83%98%E1%83%9C%E1%83%A2%E1%83%94%E1%83%A0%E1%83%94%E1%83%A1%E1%83%94%E1%83%91%E1%83%A1%20%E1%83%A1%E1%83%90%E1%83%98%E1%83%A2%E1%83%98%E1%83%A1%20%E1%83%90%E1%83%AC%E1%83%A7%E1%83%9D%E1%83%91%E1%83%90" class="btn btn-emerald" target="_blank">
+
+        <div class="contact-box">
+            <a href="tel:+995557998522" class="contact-item">📞 <span>+995 557 99 85 22</span></a>
+            <a href="mailto:gnadiradzeee@gmail.com" class="contact-item">✉️ <span>gnadiradzeee@gmail.com</span></a>
+            <a href="https://wa.me/995557998522" target="_blank" class="contact-item">💬 <span>WhatsApp Direct Chat</span></a>
+        </div>
+
+        <br><br>
+        <a href="https://wa.me/995557998522?text=Gamarjoba" class="btn btn-emerald" target="_blank" id="cta-btn">
             📲 მოგვწერეთ WhatsApp-ში კონსულტაციისთვის
         </a>
     </section>
@@ -401,5 +473,102 @@
         <p>© 2026 GN Web & AI Studio. ყველა უფლება დაცულია.</p>
     </footer>
 
+    <script>
+        const translations = {
+            ka: {
+                badge: "Next-Gen Web Solutions",
+                heroTitle: 'გადააქციეთ ვიზიტორები <span>მუდმივ კლიენტებად</span>',
+                heroDesc: "ვქმნით ექსკლუზიურ, ულტრა-სწრაფ საიტებს მცირე და საშუალო ბიზნესისთვის. ინტეგრირებული Google Maps, Direct ჩაწერა და Generative AI SEO.",
+                heroCta1: "დაიწყეთ პროექტი დღესვე",
+                heroCta2: "ნახეთ ნამუშევარი ➔",
+                featuresTitle: "რატომ ჩვენი ვებ-გადაწყვეტილებები?",
+                featuresSub: "3 მთავარი კომპონენტი, რაც თქვენს ბიზნესს კონკურენტებისგან გამოარჩევს",
+                f1Title: "1-Click Direct ჩაწერა",
+                f1Desc: "მომხმარებელი 1 დაწკაპუნებით გადადის WhatsApp-ში ან რეკავს თქვენთან. აღარანაირი დაკარგული კლიენტი Direct-ში ლოდინის გამო.",
+                f2Title: "Generative AI & GEO",
+                f2Desc: "საიტის სტრუქტურა ეწყობა ისე, რომ ChatGPT-მ, Gemini-მ და Google Search-მა თქვენი ბიზნესი პირველ რეკომენდაციად დააფიქსირონ.",
+                f3Title: "Google Maps სინქრონიზაცია",
+                f3Desc: "Google Business Profile-ის სრული გამართვა და საიტთან მიბმა ლოკალური კლიენტების უწყვეტი ნაკადისთვის.",
+                caseTitle: "რეალური ქეისი",
+                caseSub: "როგორ მუშაობს ჩვენი სისტემა პრაქტიკაში",
+                caseDesc: "სპეციალიზებული სერვისული ბიზნესის ციფრული პლატფორმა: სტრუქტურირებული ფასები, ლოკაცია და სწრაფი ონლაინ ჩაწერა.",
+                caseLink: "ცოცხალი საიტის ნახვა 🔗",
+                ctaTitle: "მზად ხართ ციფრული ტრანსფორმაციისთვის?",
+                ctaSub: "შევქმნათ უნიკალური, თქვენს ბიზნესზე მორგებული საიტი 2-3 დღეში.",
+                ctaBtn: "📲 მოგვწერეთ WhatsApp-ში კონსულტაციისთვის"
+            },
+            en: {
+                badge: "Next-Gen Web Solutions",
+                heroTitle: 'Turn Your Visitors Into <span>Paying Customers</span>',
+                heroDesc: "We craft exclusive, ultra-fast landing pages for small and medium businesses. Integrated with Google Maps, 1-Click Booking, and Generative AI SEO.",
+                heroCta1: "Start Your Project Today",
+                heroCta2: "View Live Case ➔",
+                featuresTitle: "Why Choose Our Web Solutions?",
+                featuresSub: "3 key components that will make your business stand out from competitors",
+                f1Title: "1-Click Direct Booking",
+                f1Desc: "Clients connect to your WhatsApp or Call with 1 click. No more losing potential clients waiting for DMs.",
+                f2Title: "Generative AI & GEO",
+                f2Desc: "Structured website data so ChatGPT, Gemini, and Google Search recommend your business first.",
+                f3Title: "Google Maps Integration",
+                f3Desc: "Full setup of Google Business Profile synced with your site for local customer flow.",
+                caseTitle: "Real Case Study",
+                caseSub: "How our system works in practice",
+                caseDesc: "Digital platform for a service business: structured pricing, location, and quick online booking.",
+                caseLink: "View Live Site 🔗",
+                ctaTitle: "Ready for Digital Transformation?",
+                ctaSub: "Let's create a custom site tailored to your business in 2-3 days.",
+                ctaBtn: "📲 Contact via WhatsApp for Consultation"
+            },
+            ru: {
+                badge: "Next-Gen Web Solutions",
+                heroTitle: 'Превращайте посетителей в <span>постоянных клиентов</span>',
+                heroDesc: "Создаем эксклюзивные, ультрабыстрые сайты для малого и среднего бизнеса. Интеграция с Google Maps, запись в 1 клик и Generative AI SEO.",
+                heroCta1: "Начать проект сегодня",
+                heroCta2: "Посмотреть кейс ➔",
+                featuresTitle: "Почему именно наши веб-решения?",
+                featuresSub: "3 ключевых компонента, которые выделят ваш бизнес среди конкурентов",
+                f1Title: "Запись в 1 клик",
+                f1Desc: "Клиент в 1 клик переходит в WhatsApp или звонит вам. Никаких потерянных клиентов из-за ожидания ответа в Direct.",
+                f2Title: "Generative AI & GEO",
+                f2Desc: "Структура сайта настраивается так, чтобы ChatGPT, Gemini и Google Search рекомендуют ваш бизнес первыми.",
+                f3Title: "Синхронизация с Google Maps",
+                f3Desc: "Полная настройка Google Business Profile и привязка к сайту для постоянного потока локальных клиентов.",
+                caseTitle: "Реальный кейс",
+                caseSub: "Как наша система работает на практике",
+                caseDesc: "Цифровая платформа для сервисного бизнеса: структурированные цены, локация и быстрая онлайн-запись.",
+                caseLink: "Смотреть живой сайт 🔗",
+                ctaTitle: "Готовы к цифровой трансформации?",
+                ctaSub: "Создадим уникальный сайт под ваш бизнес за 2-3 дня.",
+                ctaBtn: "📲 Написать в WhatsApp для консультации"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const t = translations[lang];
+            document.getElementById('hero-badge').innerText = t.badge;
+            document.getElementById('hero-title').innerHTML = t.heroTitle;
+            document.getElementById('hero-desc').innerText = t.heroDesc;
+            document.getElementById('hero-cta1').innerText = t.heroCta1;
+            document.getElementById('hero-cta2').innerText = t.heroCta2;
+            document.getElementById('features-title').innerText = t.featuresTitle;
+            document.getElementById('features-sub').innerText = t.featuresSub;
+            document.getElementById('f1-title').innerText = t.f1Title;
+            document.getElementById('f1-desc').innerText = t.f1Desc;
+            document.getElementById('f2-title').innerText = t.f2Title;
+            document.getElementById('f2-desc').innerText = t.f2Desc;
+            document.getElementById('f3-title').innerText = t.f3Title;
+            document.getElementById('f3-desc').innerText = t.f3Desc;
+            document.getElementById('case-title').innerText = t.caseTitle;
+            document.getElementById('case-sub').innerText = t.caseSub;
+            document.getElementById('case-desc').innerText = t.caseDesc;
+            document.getElementById('case-link').innerText = t.caseLink;
+            document.getElementById('cta-title').innerText = t.ctaTitle;
+            document.getElementById('cta-sub').innerText = t.ctaSub;
+            document.getElementById('cta-btn').innerText = t.ctaBtn;
+        }
+    </script>
 </body>
 </html>
