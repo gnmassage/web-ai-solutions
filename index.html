@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GN Web & AI Studio — High-Conversion Digital Platforms</title>
-    <meta name="description" content="AI-Ready Landing Pages and Web Solutions for Small & Medium Businesses with 1-Year Support.">
+    <title>GN Web & AI Studio — Enterprise Digital Architecture</title>
+    <meta name="description" content="AI-Ready Landing Pages, GEO Optimization and 1-Year Full Technical Governance for Small & Medium Businesses.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,17 +12,17 @@
 
     <style>
         :root {
-            --bg-dark: #070a12;
-            --bg-card: rgba(18, 24, 38, 0.65);
-            --bg-card-hover: rgba(28, 37, 58, 0.85);
+            --bg-dark: #060911;
+            --bg-card: rgba(15, 21, 36, 0.7);
+            --bg-card-hover: rgba(24, 33, 54, 0.9);
             --primary: #6366f1;
-            --primary-glow: rgba(99, 102, 241, 0.3);
+            --primary-glow: rgba(99, 102, 241, 0.35);
             --accent: #10b981;
-            --accent-glow: rgba(16, 185, 129, 0.3);
+            --accent-glow: rgba(16, 185, 129, 0.35);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --border: rgba(255, 255, 255, 0.08);
-            --border-glow: rgba(99, 102, 241, 0.4);
+            --border-glow: rgba(99, 102, 241, 0.45);
         }
 
         * {
@@ -38,13 +38,13 @@
             line-height: 1.6;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 85% 60%, rgba(16, 185, 129, 0.1) 0%, transparent 40%);
+                radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 90% 50%, rgba(16, 185, 129, 0.1) 0%, transparent 45%);
             background-attachment: fixed;
         }
 
         header {
-            background: rgba(7, 10, 18, 0.85);
+            background: rgba(6, 9, 17, 0.85);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
             padding: 1rem 2rem;
@@ -140,9 +140,9 @@
         }
 
         .hero {
-            padding: 5.5rem 1.5rem 4rem;
+            padding: 5.5rem 1.5rem 3.5rem;
             text-align: center;
-            max-width: 950px;
+            max-width: 980px;
             margin: 0 auto;
         }
 
@@ -161,7 +161,7 @@
         }
 
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 3.3rem;
             line-height: 1.2;
             margin-bottom: 1.5rem;
             font-weight: 800;
@@ -175,10 +175,10 @@
         }
 
         .hero p {
-            font-size: 1.15rem;
+            font-size: 1.18rem;
             color: var(--text-muted);
             margin-bottom: 2.5rem;
-            max-width: 720px;
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
             font-weight: 300;
@@ -195,8 +195,8 @@
         .stats-bar {
             display: flex;
             justify-content: space-around;
-            max-width: 900px;
-            margin: 3rem auto 0;
+            max-width: 920px;
+            margin: 3.5rem auto 0;
             padding: 1.5rem;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border);
@@ -205,7 +205,7 @@
         }
 
         .stat-item { text-align: center; }
-        .stat-value { font-size: 1.8rem; font-weight: 800; color: #818cf8; }
+        .stat-value { font-size: 1.85rem; font-weight: 800; color: #818cf8; }
         .stat-label { font-size: 0.85rem; color: var(--text-muted); }
 
         .section-header {
@@ -214,33 +214,77 @@
             padding: 0 1.5rem;
         }
 
-        .section-header h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section-header h2 { font-size: 2.3rem; font-weight: 700; margin-bottom: 0.5rem; }
         .section-header p { color: var(--text-muted); font-size: 1.05rem; }
 
-        /* Process Steps */
-        .process-grid {
+        /* ROI Calculator Box */
+        .calc-container {
+            max-width: 850px;
+            margin: 0 auto 4rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(20, 27, 45, 0.9), rgba(10, 14, 26, 0.95));
+            border: 1px solid var(--border-glow);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        .calc-slider-box {
+            margin: 2rem 0;
+        }
+
+        .calc-slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #1e293b;
+            outline: none;
+            accent-color: var(--accent);
+            cursor: pointer;
+        }
+
+        .calc-result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .calc-res-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.2rem;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .calc-res-val {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        /* Tech Spec Grid */
+        .tech-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
-        .process-card {
+        .tech-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             padding: 2rem;
             border-radius: 20px;
-            position: relative;
+            backdrop-filter: blur(12px);
         }
 
-        .step-num {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: rgba(99, 102, 241, 0.3);
-            margin-bottom: 0.5rem;
-        }
+        .tech-card h3 { font-size: 1.25rem; margin-bottom: 0.6rem; color: #a5b4fc; }
+        .tech-card p { font-size: 0.95rem; color: var(--text-muted); }
 
         /* Pricing Cards */
         .pricing-grid {
@@ -265,8 +309,8 @@
 
         .price-card.popular {
             border-color: var(--primary);
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
-            background: linear-gradient(180deg, rgba(28, 37, 58, 0.9), var(--bg-card));
+            box-shadow: 0 0 35px rgba(99, 102, 241, 0.25);
+            background: linear-gradient(180deg, rgba(28, 37, 58, 0.95), var(--bg-card));
         }
 
         .price-badge {
@@ -282,7 +326,7 @@
         }
 
         .price-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .price-value { font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 0.5rem; }
+        .price-value { font-size: 2.6rem; font-weight: 800; color: white; margin-bottom: 0.3rem; }
         .price-subtext { font-size: 0.85rem; color: var(--accent); margin-bottom: 1.5rem; font-weight: 600; }
         .price-features { list-style: none; margin-bottom: 2rem; }
         .price-features li { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 8px; }
@@ -290,7 +334,7 @@
         /* Showcase */
         .showcase { max-width: 1150px; margin: 4rem auto 0; padding: 0 1.5rem; }
         .showcase-card {
-            background: linear-gradient(135deg, rgba(20, 27, 45, 0.8), rgba(10, 14, 26, 0.9));
+            background: linear-gradient(135deg, rgba(20, 27, 45, 0.85), rgba(10, 14, 26, 0.95));
             border: 1px solid rgba(99, 102, 241, 0.25);
             border-radius: 24px;
             padding: 3.5rem 2.5rem;
@@ -308,7 +352,7 @@
             border-left: 3px solid var(--accent);
             padding: 1rem 1.2rem;
             border-radius: 0 12px 12px 0;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             color: var(--text-main);
             margin-bottom: 1.5rem;
             font-style: italic;
@@ -377,6 +421,7 @@
             .hero h1 { font-size: 2.2rem; }
             .showcase-card { grid-template-columns: 1fr; text-align: center; padding: 2rem 1.5rem; }
             .stats-bar { flex-direction: column; gap: 1.5rem; }
+            .calc-result-grid { grid-template-columns: 1fr; }
             header { flex-direction: column; gap: 1rem; }
         }
     </style>
@@ -386,279 +431,4 @@
     <a href="https://wa.me/995557998522?text=Gamarjoba" class="floating-wa" target="_blank" title="WhatsApp Chat">💬</a>
 
     <header>
-        <div class="logo">GN WEB & AI</div>
-        <div class="nav-right">
-            <div class="lang-switcher">
-                <button class="lang-btn active" onclick="setLanguage('ka')">GE</button>
-                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
-                <button class="lang-btn" onclick="setLanguage('ru')">RU</button>
-            </div>
-            <a href="https://wa.me/995557998522?text=Gamarjoba" class="btn btn-emerald" target="_blank">💬 WhatsApp</a>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="badge-tag">
-            <span>✨</span> <span id="hero-badge">Next-Gen Web Solutions</span>
-        </div>
-        <h1 id="hero-title">გადააქციეთ ვიზიტორები <span>მუდმივ კლიენტებად</span></h1>
-        <p id="hero-desc">ვქმნით ექსკლუზიურ საიტებს მცირე ბიზნესისთვის. 1-Click ჩაწერიანობა, Google Maps სინქრონიზაცია და **სრული ტექნიკური მხარდაჭერა 6-12 თვის განმავლობაში**.</p>
-        <div class="hero-actions">
-            <a href="https://wa.me/995557998522?text=Gamarjoba" class="btn btn-emerald" target="_blank" id="hero-cta1">დაიწყეთ პროექტი დღესვე</a>
-            <a href="#case-study" class="btn btn-glass" id="hero-cta2">ნახეთ ნამუშევარი ➔</a>
-        </div>
-
-        <div class="stats-bar">
-            <div class="stat-item">
-                <div class="stat-value">48 საათი</div>
-                <div class="stat-label" id="stat-1">მზადყოფნის ვადა</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">1 წლიანი</div>
-                <div class="stat-label" id="stat-2">ტექნიკური მხარდაჭერა</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-value">AI-Ready</div>
-                <div class="stat-label" id="stat-3">ChatGPT / Gemini SEO</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Steps -->
-    <div class="section-header">
-        <h2 id="process-title">როგორ ვმუშაობთ? (3 მარტივი ნაბიჯი)</h2>
-        <p id="process-sub">თქვენ არ გჭირდებათ კოდის ცოდნა — ჩვენ ვზრუნავთ ყველაფერზე</p>
-    </div>
-
-    <section class="process-grid">
-        <div class="process-card">
-            <div class="step-num">01</div>
-            <h3 id="p1-title">ინფორმაციის გაზიარება</h3>
-            <p id="p1-desc">მოგვაწოდეთ მხოლოდ ფოტოები, სერვისების სია და ფასები WhatsApp-ში.</p>
-        </div>
-        <div class="process-card">
-            <div class="step-num">02</div>
-            <h3 id="p2-title">აწყობა & AI SEO (48 სთ)</h3>
-            <p id="p2-desc">ჩვენ ვაწყობთ დიზაინს, ტექსტებს, Google Maps-სა და AI საძიებო ოპტიმიზაციას.</p>
-        </div>
-        <div class="process-card">
-            <div class="step-num">03</div>
-            <h3 id="p3-title">გაშვება & მხარდაჭერა</h3>
-            <p id="p3-desc">საიტი ცოცხლდება. შემდეგი 6-12 თვე ჩვენ ვცვლით ნებისმიერ დეტალს თქვენი მოთხოვნით.</p>
-        </div>
-    </section>
-
-    <div class="section-header">
-        <h2 id="pricing-title">პაკეტები & 1-წლიანი მხარდაჭერა</h2>
-        <p id="pricing-sub">საიტის დამზადება + უწყვეტი ტექნიკური პატრონობა</p>
-    </div>
-
-    <section class="pricing-grid">
-        <div class="price-card">
-            <div>
-                <div class="price-title">Starter & 6-Mo Care</div>
-                <div class="price-value">290 ₾</div>
-                <div class="price-subtext">🛠️ მოიცავს 6 თვიან ტექ. მხარდაჭერას</div>
-                <ul class="price-features">
-                    <li>✓ 1-გვერდიანი modern დიზაინი</li>
-                    <li>✓ 100% მობილური ადაპტაცია</li>
-                    <li>✓ WhatsApp / Call 1-Click ჩაწერა</li>
-                    <li>✓ **6 თვე დეტალების/ფასების უფასო ცვლილება**</li>
-                    <li>✓ უფასო ჰოსტინგი (GitHub/Vercel)</li>
-                </ul>
-            </div>
-            <a href="https://wa.me/995557998522?text=Starter%20Package" class="btn btn-glass">არჩევა</a>
-        </div>
-
-        <div class="price-card popular">
-            <div class="price-badge">ყველაზე პოპულარული</div>
-            <div>
-                <div class="price-title">Full Business & 1-Yr Care</div>
-                <div class="price-value">490 ₾</div>
-                <div class="price-subtext">🛡️ მოიცავს 1 წლიან სრულ პატრონობას</div>
-                <ul class="price-features">
-                    <li>✓ Starter-ის ყველა შესაძლებლობა</li>
-                    <li>✓ Google Business Profile (Maps) გამართვა</li>
-                    <li>✓ GEO / AI SEO სტრუქტურირება</li>
-                    <li>✓ მრავალენოვანი მხარდაჭერა (GE/EN/RU)</li>
-                    <li>✓ **12 თვე ტექსტების/ფოტოების/ფასების უწყვეტი ჩასწორება**</li>
-                </ul>
-            </div>
-            <a href="https://wa.me/995557998522?text=AI%20Package" class="btn btn-emerald">არჩევა</a>
-        </div>
-    </section>
-
-    <div class="section-header" id="case-study">
-        <h2 id="case-title">რეალური ქეისი</h2>
-        <p id="case-sub">როგორ მუშაობს ჩვენი სისტემა პრაქტიკაში</p>
-    </div>
-
-    <section class="showcase">
-        <div class="showcase-card">
-            <div class="showcase-info">
-                <span class="badge-tag">Featured Project</span>
-                <h3>GN Massage Tbilisi</h3>
-                <p id="case-desc">სპეციალიზებული სერვისული ბიზნესის ციფრული პლატფორმა: სტრუქტურირებული ფასები, ლოკაცია და სწრაფი ონლაინ ჩაწერა.</p>
-                
-                <div class="testimonial-quote">
-                    "საიტისა და Google Maps-ის გამართვის შემდეგ, სოციალური ქსელებიდან მოსული ვიზიტორების 80% პირდაპირ WhatsApp-ში ჩაეწერა, რითაც დავზოგეთ Direct-ში პასუხების წერის დრო."
-                </div>
-
-                <div class="pill-group">
-                    <span class="pill">⚡ 100% Mobile Optimized</span>
-                    <span class="pill">📍 Google Maps Sync</span>
-                    <span class="pill">💬 WhatsApp Booking</span>
-                </div>
-
-                <a href="https://gnmassage.github.io/gn-massage/" class="btn btn-glass" target="_blank" id="case-link">ცოცხალი საიტის ნახვა 🔗</a>
-            </div>
-
-            <div class="visual-preview">
-                <div style="font-size: 3.5rem; margin-bottom: 1rem;">🧘‍♂️</div>
-                <div style="font-weight: 700; font-size: 1.1rem; color: #a5b4fc;">GN Massage Studio</div>
-                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.4rem;">Tbilisi, Georgia</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="footer-cta">
-        <h2 style="font-size: 2.2rem; margin-bottom: 1rem;" id="cta-title">მზად ხართ ციფრული ტრანსფორმაციისთვის?</h2>
-        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; font-size: 1.05rem;" id="cta-sub">
-            შევქმნათ უნიკალური საიტი + 1-წლიანი მხარდაჭერა თქვენი ბიზნესისთვის.
-        </p>
-
-        <div class="contact-box">
-            <a href="tel:+995557998522" class="contact-item">📞 <span>+995 557 99 85 22</span></a>
-            <a href="mailto:gnadiradzeee@gmail.com" class="contact-item">✉️ <span>gnadiradzeee@gmail.com</span></a>
-            <a href="https://wa.me/995557998522" target="_blank" class="contact-item">💬 <span>WhatsApp Direct Chat</span></a>
-        </div>
-
-        <br><br>
-        <a href="https://wa.me/995557998522?text=Gamarjoba" class="btn btn-emerald" target="_blank" id="cta-btn">
-            📲 მოგვწერეთ WhatsApp-ში კონსულტაციისთვის
-        </a>
-    </section>
-
-    <footer>
-        <p>© 2026 GN Web & AI Studio. ყველა უფლება დაცულია.</p>
-    </footer>
-
-    <script>
-        const translations = {
-            ka: {
-                badge: "Next-Gen Web Solutions",
-                heroTitle: 'გადააქციეთ ვიზიტორები <span>მუდმივ კლიენტებად</span>',
-                heroDesc: "ვქმნით ექსკლუზიურ საიტებს მცირე ბიზნესისთვის. 1-Click ჩაწერიანობა, Google Maps სინქრონიზაცია და სრული ტექნიკური მხარდაჭერა 6-12 თვის განმავლობაში.",
-                heroCta1: "დაიწყეთ პროექტი დღესვე",
-                heroCta2: "ნახეთ ნამუშევარი ➔",
-                stat1: "მზადყოფნის ვადა",
-                stat2: "ტექნიკური მხარდაჭერა",
-                stat3: "ChatGPT / Gemini SEO",
-                processTitle: "როგორ ვმუშაობთ? (3 მარტივი ნაბიჯი)",
-                processSub: "თქვენ არ გჭირდებათ კოდის ცოდნა — ჩვენ ვზრუნავთ ყველაფერზე",
-                p1Title: "ინფორმაციის გაზიარება",
-                p1Desc: "მოგვაწოდეთ მხოლოდ ფოტოები, სერვისების სია და ფასები WhatsApp-ში.",
-                p2Title: "აწყობა & AI SEO (48 სთ)",
-                p2Desc: "ჩვენ ვაწყობთ დიზაინს, ტექსტებს, Google Maps-სა და AI საძიებო ოპტიმიზაციას.",
-                p3Title: "გაშვება & მხარდაჭერა",
-                p3Desc: "საიტი ცოცხლდება. შემდეგი 6-12 თვე ჩვენ ვცვლით ნებისმიერ დეტალს თქვენი მოთხოვნით.",
-                pricingTitle: "პაკეტები & 1-წლიანი მხარდაჭერა",
-                pricingSub: "საიტის დამზადება + უწყვეტი ტექნიკური პატრონობა",
-                caseTitle: "რეალური ქეისი",
-                caseSub: "როგორ მუშაობს ჩვენი სისტემა პრაქტიკაში",
-                caseDesc: "სპეციალიზებული სერვისული ბიზნესის ციფრული პლატფორმა: სტრუქტურირებული ფასები, ლოკაცია და სწრაფი ონლაინ ჩაწერა.",
-                caseLink: "ცოცხალი საიტის ნახვა 🔗",
-                ctaTitle: "მზად ხართ ციფრული ტრანსფორმაციისთვის?",
-                ctaSub: "შევქმნათ უნიკალური საიტი + 1-წლიანი მხარდაჭერა თქვენი ბიზნესისთვის.",
-                ctaBtn: "📲 მოგვწერეთ WhatsApp-ში კონსულტაციისთვის"
-            },
-            en: {
-                badge: "Next-Gen Web Solutions",
-                heroTitle: 'Turn Your Visitors Into <span>Paying Customers</span>',
-                heroDesc: "We craft exclusive landing pages with 1-Click Booking, Google Maps Sync, and 6-12 months of full technical maintenance.",
-                heroCta1: "Start Your Project Today",
-                heroCta2: "View Live Case ➔",
-                stat1: "Turnaround Time",
-                stat2: "Full Tech Support",
-                stat3: "ChatGPT / Gemini SEO",
-                processTitle: "How We Work (3 Simple Steps)",
-                processSub: "No coding skills required — we handle everything for you",
-                p1Title: "Share Details",
-                p1Desc: "Just send us your photos, list of services, and pricing on WhatsApp.",
-                p2Title: "Build & AI SEO (48h)",
-                p2Desc: "We craft the design, content, Google Maps sync, and AI SEO optimization.",
-                p3Title: "Launch & Support",
-                p3Desc: "Site goes live. We update any content for you for the next 6-12 months.",
-                pricingTitle: "Packages & 1-Year Support",
-                pricingSub: "Website creation + continuous technical maintenance",
-                caseTitle: "Real Case Study",
-                caseSub: "How our system works in practice",
-                caseDesc: "Digital platform for a service business: structured pricing, location, and quick online booking.",
-                caseLink: "View Live Site 🔗",
-                ctaTitle: "Ready for Digital Transformation?",
-                ctaSub: "Let's build a custom site with 1-year maintenance for your business.",
-                ctaBtn: "📲 Contact via WhatsApp for Consultation"
-            },
-            ru: {
-                badge: "Next-Gen Web Solutions",
-                heroTitle: 'Превращайте посетителей в <span>постоянных клиентов</span>',
-                heroDesc: "Создаем эксклюзивные сайты с записью в 1 клик, Google Maps и 6-12 месяцами полного технического обслуживания.",
-                heroCta1: "Начать проект сегодня",
-                heroCta2: "Посмотреть кейс ➔",
-                stat1: "Срок выполнения",
-                stat2: "Тех.Поддержка",
-                stat3: "ChatGPT / Gemini SEO",
-                processTitle: "Как мы работаем (3 простых шага)",
-                processSub: "Вам не нужно знать код — мы позаботимся обо всем",
-                p1Title: "Передайте детали",
-                p1Desc: "Просто отправьте нам фото, список услуг и цены в WhatsApp.",
-                p2Title: "Сборка и AI SEO (48ч)",
-                p2Desc: "Мы настраиваем дизайн, тексты, Google Maps и AI оптимизацию.",
-                p3Title: "Запуск и Поддержка",
-                p3Desc: "Сайт запускается. Мы бесплатно обновляем детали в течение 6-12 месяцев.",
-                pricingTitle: "Пакеты и Поддержка 1 Год",
-                pricingSub: "Создание сайта + непрерывное техническое обслуживание",
-                caseTitle: "Реальный кейс",
-                caseSub: "Как наша система работает на практике",
-                caseDesc: "Цифровая платформа для сервисного бизнеса: структурированные цены, локация и быстрая онлайн-запись.",
-                caseLink: "Смотреть живой сайт 🔗",
-                ctaTitle: "Готовы к цифровой трансформации?",
-                ctaSub: "Создадим сайт + 1 год поддержки под ваш бизнес.",
-                ctaBtn: "📲 Написать в WhatsApp для консультации"
-            }
-        };
-
-        function setLanguage(lang) {
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            const t = translations[lang];
-            document.getElementById('hero-badge').innerText = t.badge;
-            document.getElementById('hero-title').innerHTML = t.heroTitle;
-            document.getElementById('hero-desc').innerText = t.heroDesc;
-            document.getElementById('hero-cta1').innerText = t.heroCta1;
-            document.getElementById('hero-cta2').innerText = t.heroCta2;
-            document.getElementById('stat-1').innerText = t.stat1;
-            document.getElementById('stat-2').innerText = t.stat2;
-            document.getElementById('stat-3').innerText = t.stat3;
-            document.getElementById('process-title').innerText = t.processTitle;
-            document.getElementById('process-sub').innerText = t.processSub;
-            document.getElementById('p1-title').innerText = t.p1Title;
-            document.getElementById('p1-desc').innerText = t.p1Desc;
-            document.getElementById('p2-title').innerText = t.p2Title;
-            document.getElementById('p2-desc').innerText = t.p2Desc;
-            document.getElementById('p3-title').innerText = t.p3Title;
-            document.getElementById('p3-desc').innerText = t.p3Desc;
-            document.getElementById('pricing-title').innerText = t.pricingTitle;
-            document.getElementById('pricing-sub').innerText = t.pricingSub;
-            document.getElementById('case-title').innerText = t.caseTitle;
-            document.getElementById('case-sub').innerText = t.caseSub;
-            document.getElementById('case-desc').innerText = t.caseDesc;
-            document.getElementById('case-link').innerText = t.caseLink;
-            document.getElementById('cta-title').innerText = t.ctaTitle;
-            document.getElementById('cta-sub').innerText = t.ctaSub;
-            document.getElementById('cta-btn').innerText = t.ctaBtn;
-        }
-    </script>
-</body>
-</html>
+        <div class
