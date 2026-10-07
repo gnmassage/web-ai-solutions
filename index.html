@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GN Web & AI Studio — High-Conversion Digital Platforms</title>
-    <meta name="description" content="AI-Ready Landing Pages and Web Solutions for Small & Medium Businesses.">
+    <meta name="description" content="AI-Ready Landing Pages and Web Solutions for Small & Medium Businesses with 1-Year Support.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -217,48 +217,37 @@
         .section-header h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
         .section-header p { color: var(--text-muted); font-size: 1.05rem; }
 
-        .grid {
+        /* Process Steps */
+        .process-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.8rem;
-            padding: 0 1.5rem;
-            max-width: 1150px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
             margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
-        .card {
+        .process-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            padding: 2.2rem;
+            padding: 2rem;
             border-radius: 20px;
-            backdrop-filter: blur(12px);
-            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .card:hover {
-            transform: translateY(-6px);
-            background: var(--bg-card-hover);
-            border-color: var(--border-glow);
+        .step-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: rgba(99, 102, 241, 0.3);
+            margin-bottom: 0.5rem;
         }
-
-        .card-number {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-
-        .card h3 { font-size: 1.35rem; margin-bottom: 0.8rem; font-weight: 600; }
-        .card p { color: var(--text-muted); font-size: 0.98rem; font-weight: 300; }
 
         /* Pricing Cards */
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
-            max-width: 1000px;
+            max-width: 1050px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
@@ -277,6 +266,7 @@
         .price-card.popular {
             border-color: var(--primary);
             box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
+            background: linear-gradient(180deg, rgba(28, 37, 58, 0.9), var(--bg-card));
         }
 
         .price-badge {
@@ -292,10 +282,12 @@
         }
 
         .price-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .price-value { font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 1.5rem; }
+        .price-value { font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 0.5rem; }
+        .price-subtext { font-size: 0.85rem; color: var(--accent); margin-bottom: 1.5rem; font-weight: 600; }
         .price-features { list-style: none; margin-bottom: 2rem; }
         .price-features li { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 8px; }
 
+        /* Showcase */
         .showcase { max-width: 1150px; margin: 4rem auto 0; padding: 0 1.5rem; }
         .showcase-card {
             background: linear-gradient(135deg, rgba(20, 27, 45, 0.8), rgba(10, 14, 26, 0.9));
@@ -309,7 +301,18 @@
         }
 
         .showcase-info h3 { font-size: 2rem; margin-bottom: 1rem; font-weight: 700; }
-        .showcase-info p { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem; }
+        .showcase-info p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+        .testimonial-quote {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--accent);
+            padding: 1rem 1.2rem;
+            border-radius: 0 12px 12px 0;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
 
         .pill-group { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 2rem; }
         .pill { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); padding: 0.4rem 0.9rem; border-radius: 8px; font-size: 0.85rem; color: #a5b4fc; }
@@ -321,6 +324,28 @@
             padding: 2.5rem;
             text-align: center;
         }
+
+        /* Floating WhatsApp Button */
+        .floating-wa {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--accent);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+            text-decoration: none;
+            z-index: 9999;
+            transition: transform 0.3s ease;
+        }
+
+        .floating-wa:hover { transform: scale(1.1); }
 
         .contact-box {
             background: var(--bg-card);
@@ -358,6 +383,8 @@
 </head>
 <body>
 
+    <a href="https://wa.me/995557998522?text=Gamarjoba" class="floating-wa" target="_blank" title="WhatsApp Chat">💬</a>
+
     <header>
         <div class="logo">GN WEB & AI</div>
         <div class="nav-right">
@@ -375,7 +402,7 @@
             <span>✨</span> <span id="hero-badge">Next-Gen Web Solutions</span>
         </div>
         <h1 id="hero-title">გადააქციეთ ვიზიტორები <span>მუდმივ კლიენტებად</span></h1>
-        <p id="hero-desc">ვქმნით ექსკლუზიურ, ულტრა-სწრაფ საიტებს მცირე და საშუალო ბიზნესისთვის. ინტეგრირებული Google Maps, Direct ჩაწერა და Generative AI SEO.</p>
+        <p id="hero-desc">ვქმნით ექსკლუზიურ საიტებს მცირე ბიზნესისთვის. 1-Click ჩაწერიანობა, Google Maps სინქრონიზაცია და **სრული ტექნიკური მხარდაჭერა 6-12 თვის განმავლობაში**.</p>
         <div class="hero-actions">
             <a href="https://wa.me/995557998522?text=Gamarjoba" class="btn btn-emerald" target="_blank" id="hero-cta1">დაიწყეთ პროექტი დღესვე</a>
             <a href="#case-study" class="btn btn-glass" id="hero-cta2">ნახეთ ნამუშევარი ➔</a>
@@ -383,12 +410,12 @@
 
         <div class="stats-bar">
             <div class="stat-item">
-                <div class="stat-value">2-3 დღე</div>
+                <div class="stat-value">48 საათი</div>
                 <div class="stat-label" id="stat-1">მზადყოფნის ვადა</div>
             </div>
             <div class="stat-item">
-                <div class="stat-value">100%</div>
-                <div class="stat-label" id="stat-2">PageSpeed Performance</div>
+                <div class="stat-value">1 წლიანი</div>
+                <div class="stat-label" id="stat-2">ტექნიკური მხარდაჭერა</div>
             </div>
             <div class="stat-item">
                 <div class="stat-value">AI-Ready</div>
@@ -397,43 +424,46 @@
         </div>
     </section>
 
+    <!-- Process Steps -->
     <div class="section-header">
-        <h2 id="features-title">რატომ ჩვენი ვებ-გადაწყვეტილებები?</h2>
-        <p id="features-sub">3 მთავარი კომპონენტი, რაც თქვენს ბიზნესს კონკურენტებისგან გამოარჩევს</p>
+        <h2 id="process-title">როგორ ვმუშაობთ? (3 მარტივი ნაბიჯი)</h2>
+        <p id="process-sub">თქვენ არ გჭირდებათ კოდის ცოდნა — ჩვენ ვზრუნავთ ყველაფერზე</p>
     </div>
 
-    <section class="grid">
-        <div class="card">
-            <div class="card-number">01 / Conversion</div>
-            <h3 id="f1-title">1-Click Direct ჩაწერა</h3>
-            <p id="f1-desc">მომხმარებელი 1 დაწკაპუნებით გადადის WhatsApp-ში ან რეკავს თქვენთან. აღარანაირი დაკარგული კლიენტი Direct-ში ლოდინის გამო.</p>
+    <section class="process-grid">
+        <div class="process-card">
+            <div class="step-num">01</div>
+            <h3 id="p1-title">ინფორმაციის გაზიარება</h3>
+            <p id="p1-desc">მოგვაწოდეთ მხოლოდ ფოტოები, სერვისების სია და ფასები WhatsApp-ში.</p>
         </div>
-        <div class="card">
-            <div class="card-number">02 / Intelligence</div>
-            <h3 id="f2-title">Generative AI & GEO</h3>
-            <p id="f2-desc">საიტის სტრუქტურა ეწყობა ისე, რომ ChatGPT-მ, Gemini-მ და Google Search-მა თქვენი ბიზნესი პირველ რეკომენდაციად დააფიქსირონ.</p>
+        <div class="process-card">
+            <div class="step-num">02</div>
+            <h3 id="p2-title">აწყობა & AI SEO (48 სთ)</h3>
+            <p id="p2-desc">ჩვენ ვაწყობთ დიზაინს, ტექსტებს, Google Maps-სა და AI საძიებო ოპტიმიზაციას.</p>
         </div>
-        <div class="card">
-            <div class="card-number">03 / Presence</div>
-            <h3 id="f3-title">Google Maps სინქრონიზაცია</h3>
-            <p id="f3-desc">Google Business Profile-ის სრული გამართვა და საიტთან მიბმა ლოკალური კლიენტების უწყვეტი ნაკადისთვის.</p>
+        <div class="process-card">
+            <div class="step-num">03</div>
+            <h3 id="p3-title">გაშვება & მხარდაჭერა</h3>
+            <p id="p3-desc">საიტი ცოცხლდება. შემდეგი 6-12 თვე ჩვენ ვცვლით ნებისმიერ დეტალს თქვენი მოთხოვნით.</p>
         </div>
     </section>
 
     <div class="section-header">
-        <h2 id="pricing-title">პაკეტები და ფასები</h2>
-        <p id="pricing-sub">გამჭვირვალე პირობები ყოველგვარი ფარული ხარჯის გარეშე</p>
+        <h2 id="pricing-title">პაკეტები & 1-წლიანი მხარდაჭერა</h2>
+        <p id="pricing-sub">საიტის დამზადება + უწყვეტი ტექნიკური პატრონობა</p>
     </div>
 
     <section class="pricing-grid">
         <div class="price-card">
             <div>
-                <div class="price-title">Starter Page</div>
-                <div class="price-value">250 ₾</div>
+                <div class="price-title">Starter & 6-Mo Care</div>
+                <div class="price-value">290 ₾</div>
+                <div class="price-subtext">🛠️ მოიცავს 6 თვიან ტექ. მხარდაჭერას</div>
                 <ul class="price-features">
                     <li>✓ 1-გვერდიანი modern დიზაინი</li>
                     <li>✓ 100% მობილური ადაპტაცია</li>
-                    <li>✓ WhatsApp / Call ღილაკები</li>
+                    <li>✓ WhatsApp / Call 1-Click ჩაწერა</li>
+                    <li>✓ **6 თვე დეტალების/ფასების უფასო ცვლილება**</li>
                     <li>✓ უფასო ჰოსტინგი (GitHub/Vercel)</li>
                 </ul>
             </div>
@@ -441,16 +471,17 @@
         </div>
 
         <div class="price-card popular">
-            <div class="price-badge">ყველაზე მოთხოვნადი</div>
+            <div class="price-badge">ყველაზე პოპულარული</div>
             <div>
-                <div class="price-title">AI & Business Growth</div>
-                <div class="price-value">450 ₾</div>
+                <div class="price-title">Full Business & 1-Yr Care</div>
+                <div class="price-value">490 ₾</div>
+                <div class="price-subtext">🛡️ მოიცავს 1 წლიან სრულ პატრონობას</div>
                 <ul class="price-features">
                     <li>✓ Starter-ის ყველა შესაძლებლობა</li>
                     <li>✓ Google Business Profile (Maps) გამართვა</li>
                     <li>✓ GEO / AI SEO სტრუქტურირება</li>
                     <li>✓ მრავალენოვანი მხარდაჭერა (GE/EN/RU)</li>
-                    <li>✓ 30 დღიანი უფასო მხარდაჭერა</li>
+                    <li>✓ **12 თვე ტექსტების/ფოტოების/ფასების უწყვეტი ჩასწორება**</li>
                 </ul>
             </div>
             <a href="https://wa.me/995557998522?text=AI%20Package" class="btn btn-emerald">არჩევა</a>
@@ -469,6 +500,10 @@
                 <h3>GN Massage Tbilisi</h3>
                 <p id="case-desc">სპეციალიზებული სერვისული ბიზნესის ციფრული პლატფორმა: სტრუქტურირებული ფასები, ლოკაცია და სწრაფი ონლაინ ჩაწერა.</p>
                 
+                <div class="testimonial-quote">
+                    "საიტისა და Google Maps-ის გამართვის შემდეგ, სოციალური ქსელებიდან მოსული ვიზიტორების 80% პირდაპირ WhatsApp-ში ჩაეწერა, რითაც დავზოგეთ Direct-ში პასუხების წერის დრო."
+                </div>
+
                 <div class="pill-group">
                     <span class="pill">⚡ 100% Mobile Optimized</span>
                     <span class="pill">📍 Google Maps Sync</span>
@@ -489,7 +524,7 @@
     <section class="footer-cta">
         <h2 style="font-size: 2.2rem; margin-bottom: 1rem;" id="cta-title">მზად ხართ ციფრული ტრანსფორმაციისთვის?</h2>
         <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; font-size: 1.05rem;" id="cta-sub">
-            შევქმნათ უნიკალური, თქვენს ბიზნესზე მორგებული საიტი 2-3 დღეში.
+            შევქმნათ უნიკალური საიტი + 1-წლიანი მხარდაჭერა თქვენი ბიზნესისთვის.
         </p>
 
         <div class="contact-box">
@@ -513,82 +548,82 @@
             ka: {
                 badge: "Next-Gen Web Solutions",
                 heroTitle: 'გადააქციეთ ვიზიტორები <span>მუდმივ კლიენტებად</span>',
-                heroDesc: "ვქმნით ექსკლუზიურ, ულტრა-სწრაფ საიტებს მცირე და საშუალო ბიზნესისთვის. ინტეგრირებული Google Maps, Direct ჩაწერა და Generative AI SEO.",
+                heroDesc: "ვქმნით ექსკლუზიურ საიტებს მცირე ბიზნესისთვის. 1-Click ჩაწერიანობა, Google Maps სინქრონიზაცია და სრული ტექნიკური მხარდაჭერა 6-12 თვის განმავლობაში.",
                 heroCta1: "დაიწყეთ პროექტი დღესვე",
                 heroCta2: "ნახეთ ნამუშევარი ➔",
                 stat1: "მზადყოფნის ვადა",
-                stat2: "PageSpeed Performance",
+                stat2: "ტექნიკური მხარდაჭერა",
                 stat3: "ChatGPT / Gemini SEO",
-                featuresTitle: "რატომ ჩვენი ვებ-გადაწყვეტილებები?",
-                featuresSub: "3 მთავარი კომპონენტი, რაც თქვენს ბიზნესს კონკურენტებისგან გამოარჩევს",
-                f1Title: "1-Click Direct ჩაწერა",
-                f1Desc: "მომხმარებელი 1 დაწკაპუნებით გადადის WhatsApp-ში ან რეკავს თქვენთან. აღარანაირი დაკარგული კლიენტი Direct-ში ლოდინის გამო.",
-                f2Title: "Generative AI & GEO",
-                f2Desc: "საიტის სტრუქტურა ეწყობა ისე, რომ ChatGPT-მ, Gemini-მ და Google Search-მა თქვენი ბიზნესი პირველ რეკომენდაციად დააფიქსირონ.",
-                f3Title: "Google Maps სინქრონიზაცია",
-                f3Desc: "Google Business Profile-ის სრული გამართვა და საიტთან მიბმა ლოკალური კლიენტების უწყვეტი ნაკადისთვის.",
-                pricingTitle: "პაკეტები და ფასები",
-                pricingSub: "გამჭვირვალე პირობები ყოველგვარი ფარული ხარჯის გარეშე",
+                processTitle: "როგორ ვმუშაობთ? (3 მარტივი ნაბიჯი)",
+                processSub: "თქვენ არ გჭირდებათ კოდის ცოდნა — ჩვენ ვზრუნავთ ყველაფერზე",
+                p1Title: "ინფორმაციის გაზიარება",
+                p1Desc: "მოგვაწოდეთ მხოლოდ ფოტოები, სერვისების სია და ფასები WhatsApp-ში.",
+                p2Title: "აწყობა & AI SEO (48 სთ)",
+                p2Desc: "ჩვენ ვაწყობთ დიზაინს, ტექსტებს, Google Maps-სა და AI საძიებო ოპტიმიზაციას.",
+                p3Title: "გაშვება & მხარდაჭერა",
+                p3Desc: "საიტი ცოცხლდება. შემდეგი 6-12 თვე ჩვენ ვცვლით ნებისმიერ დეტალს თქვენი მოთხოვნით.",
+                pricingTitle: "პაკეტები & 1-წლიანი მხარდაჭერა",
+                pricingSub: "საიტის დამზადება + უწყვეტი ტექნიკური პატრონობა",
                 caseTitle: "რეალური ქეისი",
                 caseSub: "როგორ მუშაობს ჩვენი სისტემა პრაქტიკაში",
                 caseDesc: "სპეციალიზებული სერვისული ბიზნესის ციფრული პლატფორმა: სტრუქტურირებული ფასები, ლოკაცია და სწრაფი ონლაინ ჩაწერა.",
                 caseLink: "ცოცხალი საიტის ნახვა 🔗",
                 ctaTitle: "მზად ხართ ციფრული ტრანსფორმაციისთვის?",
-                ctaSub: "შევქმნათ უნიკალური, თქვენს ბიზნესზე მორგებული საიტი 2-3 დღეში.",
+                ctaSub: "შევქმნათ უნიკალური საიტი + 1-წლიანი მხარდაჭერა თქვენი ბიზნესისთვის.",
                 ctaBtn: "📲 მოგვწერეთ WhatsApp-ში კონსულტაციისთვის"
             },
             en: {
                 badge: "Next-Gen Web Solutions",
                 heroTitle: 'Turn Your Visitors Into <span>Paying Customers</span>',
-                heroDesc: "We craft exclusive, ultra-fast landing pages for small and medium businesses. Integrated with Google Maps, 1-Click Booking, and Generative AI SEO.",
+                heroDesc: "We craft exclusive landing pages with 1-Click Booking, Google Maps Sync, and 6-12 months of full technical maintenance.",
                 heroCta1: "Start Your Project Today",
                 heroCta2: "View Live Case ➔",
                 stat1: "Turnaround Time",
-                stat2: "PageSpeed Performance",
+                stat2: "Full Tech Support",
                 stat3: "ChatGPT / Gemini SEO",
-                featuresTitle: "Why Choose Our Web Solutions?",
-                featuresSub: "3 key components that will make your business stand out from competitors",
-                f1Title: "1-Click Direct Booking",
-                f1Desc: "Clients connect to your WhatsApp or Call with 1 click. No more losing potential clients waiting for DMs.",
-                f2Title: "Generative AI & GEO",
-                f2Desc: "Structured website data so ChatGPT, Gemini, and Google Search recommend your business first.",
-                f3Title: "Google Maps Integration",
-                f3Desc: "Full setup of Google Business Profile synced with your site for local customer flow.",
-                pricingTitle: "Packages & Pricing",
-                pricingSub: "Transparent terms with no hidden costs",
+                processTitle: "How We Work (3 Simple Steps)",
+                processSub: "No coding skills required — we handle everything for you",
+                p1Title: "Share Details",
+                p1Desc: "Just send us your photos, list of services, and pricing on WhatsApp.",
+                p2Title: "Build & AI SEO (48h)",
+                p2Desc: "We craft the design, content, Google Maps sync, and AI SEO optimization.",
+                p3Title: "Launch & Support",
+                p3Desc: "Site goes live. We update any content for you for the next 6-12 months.",
+                pricingTitle: "Packages & 1-Year Support",
+                pricingSub: "Website creation + continuous technical maintenance",
                 caseTitle: "Real Case Study",
                 caseSub: "How our system works in practice",
                 caseDesc: "Digital platform for a service business: structured pricing, location, and quick online booking.",
                 caseLink: "View Live Site 🔗",
                 ctaTitle: "Ready for Digital Transformation?",
-                ctaSub: "Let's create a custom site tailored to your business in 2-3 days.",
+                ctaSub: "Let's build a custom site with 1-year maintenance for your business.",
                 ctaBtn: "📲 Contact via WhatsApp for Consultation"
             },
             ru: {
                 badge: "Next-Gen Web Solutions",
                 heroTitle: 'Превращайте посетителей в <span>постоянных клиентов</span>',
-                heroDesc: "Создаем эксклюзивные, ультрабыстрые сайты для малого и среднего бизнеса. Интеграция с Google Maps, запись в 1 клик и Generative AI SEO.",
+                heroDesc: "Создаем эксклюзивные сайты с записью в 1 клик, Google Maps и 6-12 месяцами полного технического обслуживания.",
                 heroCta1: "Начать проект сегодня",
                 heroCta2: "Посмотреть кейс ➔",
                 stat1: "Срок выполнения",
-                stat2: "PageSpeed Performance",
+                stat2: "Тех.Поддержка",
                 stat3: "ChatGPT / Gemini SEO",
-                featuresTitle: "Почему именно наши веб-решения?",
-                featuresSub: "3 ключевых компонента, которые выделят ваш бизнес среди конкурентов",
-                f1Title: "Запись в 1 клик",
-                f1Desc: "Клиент в 1 клик переходит в WhatsApp или звонит вам. Никаких потерянных клиентов из-за ожидания ответа в Direct.",
-                f2Title: "Generative AI & GEO",
-                f2Desc: "Структура сайта настраивается так, чтобы ChatGPT, Gemini и Google Search рекомендуют ваш бизнес первыми.",
-                f3Title: "Синхронизация с Google Maps",
-                f3Desc: "Полная настройка Google Business Profile и привязка к сайту для постоянного потока локальных клиентов.",
-                pricingTitle: "Пакеты и Цены",
-                pricingSub: "Прозрачные условия без скрытых расходов",
+                processTitle: "Как мы работаем (3 простых шага)",
+                processSub: "Вам не нужно знать код — мы позаботимся обо всем",
+                p1Title: "Передайте детали",
+                p1Desc: "Просто отправьте нам фото, список услуг и цены в WhatsApp.",
+                p2Title: "Сборка и AI SEO (48ч)",
+                p2Desc: "Мы настраиваем дизайн, тексты, Google Maps и AI оптимизацию.",
+                p3Title: "Запуск и Поддержка",
+                p3Desc: "Сайт запускается. Мы бесплатно обновляем детали в течение 6-12 месяцев.",
+                pricingTitle: "Пакеты и Поддержка 1 Год",
+                pricingSub: "Создание сайта + непрерывное техническое обслуживание",
                 caseTitle: "Реальный кейс",
                 caseSub: "Как наша система работает на практике",
                 caseDesc: "Цифровая платформа для сервисного бизнеса: структурированные цены, локация и быстрая онлайн-запись.",
                 caseLink: "Смотреть живой сайт 🔗",
                 ctaTitle: "Готовы к цифровой трансформации?",
-                ctaSub: "Создадим уникальный сайт под ваш бизнес за 2-3 дня.",
+                ctaSub: "Создадим сайт + 1 год поддержки под ваш бизнес.",
                 ctaBtn: "📲 Написать в WhatsApp для консультации"
             }
         };
@@ -606,14 +641,14 @@
             document.getElementById('stat-1').innerText = t.stat1;
             document.getElementById('stat-2').innerText = t.stat2;
             document.getElementById('stat-3').innerText = t.stat3;
-            document.getElementById('features-title').innerText = t.featuresTitle;
-            document.getElementById('features-sub').innerText = t.featuresSub;
-            document.getElementById('f1-title').innerText = t.f1Title;
-            document.getElementById('f1-desc').innerText = t.f1Desc;
-            document.getElementById('f2-title').innerText = t.f2Title;
-            document.getElementById('f2-desc').innerText = t.f2Desc;
-            document.getElementById('f3-title').innerText = t.f3Title;
-            document.getElementById('f3-desc').innerText = t.f3Desc;
+            document.getElementById('process-title').innerText = t.processTitle;
+            document.getElementById('process-sub').innerText = t.processSub;
+            document.getElementById('p1-title').innerText = t.p1Title;
+            document.getElementById('p1-desc').innerText = t.p1Desc;
+            document.getElementById('p2-title').innerText = t.p2Title;
+            document.getElementById('p2-desc').innerText = t.p2Desc;
+            document.getElementById('p3-title').innerText = t.p3Title;
+            document.getElementById('p3-desc').innerText = t.p3Desc;
             document.getElementById('pricing-title').innerText = t.pricingTitle;
             document.getElementById('pricing-sub').innerText = t.pricingSub;
             document.getElementById('case-title').innerText = t.caseTitle;
