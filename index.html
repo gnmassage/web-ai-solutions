@@ -250,32 +250,49 @@
 
         .calc-res-val { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
 
-        /* Comparison Table */
-        .comp-table {
-            width: 100%;
-            max-width: 950px;
+        /* Mobile Friendly Comparison Cards */
+        .comp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
             margin: 0 auto;
-            border-collapse: collapse;
+            padding: 0 1.5rem;
+        }
+
+        .comp-card {
             background: var(--bg-card);
-            border-radius: 16px;
-            overflow: hidden;
             border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
         }
 
-        .comp-table th, .comp-table td {
-            padding: 1.2rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
+        .comp-card.our-side {
+            border-color: var(--primary);
+            background: linear-gradient(180deg, rgba(28, 37, 58, 0.9), var(--bg-card));
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
         }
 
-        .comp-table th {
-            background: rgba(255, 255, 255, 0.03);
-            color: #818cf8;
-            font-size: 1rem;
+        .comp-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .comp-table tr:last-child td { border-bottom: none; }
-        .highlight-col { background: rgba(99, 102, 241, 0.08); font-weight: 600; color: #a5b4fc; }
+        .comp-list {
+            list-style: none;
+        }
+
+        .comp-list li {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
 
         /* Process Grid */
         .process-grid {
@@ -346,6 +363,19 @@
         .price-subtext { font-size: 0.85rem; color: var(--accent); margin-bottom: 1.5rem; font-weight: 600; }
         .price-features { list-style: none; margin-bottom: 2rem; }
         .price-features li { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 8px; }
+
+        .trust-banner {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 16px;
+            padding: 1.2rem;
+            max-width: 800px;
+            margin: 2.5rem auto 0;
+            text-align: center;
+            color: #34d399;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
 
         /* Showcase */
         .showcase { max-width: 1150px; margin: 4rem auto 0; padding: 0 1.5rem; }
@@ -468,7 +498,6 @@
             .showcase-card { grid-template-columns: 1fr; text-align: center; padding: 2rem 1.5rem; }
             .stats-bar { grid-template-columns: 1fr 1fr; }
             header { flex-direction: column; gap: 1rem; }
-            .comp-table { display: block; overflow-x: auto; }
         }
     </style>
 </head>
@@ -543,44 +572,34 @@
         </div>
     </section>
 
-    <!-- Comparison Table -->
+    <!-- Comparison Section (Mobile First Design) -->
     <div class="section-header">
         <h2 id="comp-title">რატომ GN Web & AI Studio?</h2>
         <p id="comp-sub">რით ვგანსხვავდებით ჩვეულებრივი ფრილანსერებისა და სააგენტოებისგან</p>
     </div>
 
-    <section style="padding: 0 1.5rem;">
-        <table class="comp-table">
-            <thead>
-                <tr>
-                    <th>მახასიათებელი</th>
-                    <th>ჩვეულებრივი ვებ-დიზაინერი</th>
-                    <th class="highlight-col">GN Web & AI Studio</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>შესრულების ვადა</td>
-                    <td>2-4 კვირა</td>
-                    <td class="highlight-col">48 საათი</td>
-                </tr>
-                <tr>
-                    <td>ტექნიკური მხარდაჭერა</td>
-                    <td>არ არსებობს (ან საათობრივი)</td>
-                    <td class="highlight-col">6-12 თვე უწყვეტი პატრონობა</td>
-                </tr>
-                <tr>
-                    <td>Google Maps (GBP) გამართვა</td>
-                    <td>დამატებითი საფასურით</td>
-                    <td class="highlight-col">სრულად ინტეგრირებული</td>
-                </tr>
-                <tr>
-                    <td>Generative AI SEO (ChatGPT/Gemini)</td>
-                    <td>არ იციან / არ აკეთებენ</td>
-                    <td class="highlight-col">სრული სტრუქტურირება (GEO)</td>
-                </tr>
-            </tbody>
-        </table>
+    <section class="comp-grid">
+        <div class="comp-card our-side">
+            <h3 style="color: #34d399;" id="c1-head">✨ GN Web & AI Studio</h3>
+            <ul class="comp-list">
+                <li id="c1-item1">🟢 <strong>48 საათში მზადყოფნა:</strong> სწრაფი გაშვება ბიუროკრატიის გარეშე.</li>
+                <li id="c1-item2">🟢 <strong>1-წლიანი სრული პატრონობა:</strong> ტექსტების/ფასების უფასო ჩასწორება.</li>
+                <li id="c1-item3">🟢 <strong>Google Maps (GBP) გამართვა:</strong> ლოკალური კლიენტების ნაკადი.</li>
+                <li id="c1-item4">🟢 <strong>Generative AI SEO:</strong> ChatGPT-სა და Gemini-ში პოზიციონირება.</li>
+                <li id="c1-item5">🟢 <strong>0 ₾ ყოველთვიური ჰოსტინგის ხარჯი:</strong> უსწრაფესი Cloud სერვერები.</li>
+            </ul>
+        </div>
+
+        <div class="comp-card">
+            <h3 style="color: #ef4444;" id="c2-head">❌ ჩვეულებრივი მიდგომა</h3>
+            <ul class="comp-list">
+                <li id="c2-item1">🔴 <strong>2-4 კვირის ლოდინი:</strong> გაჭიმული ვადები და რთული პროცესი.</li>
+                <li id="c2-item2">🔴 <strong>მხარდაჭერის გარეშე:</strong> საიტის ჩაბარების შემდეგ მარტო რჩებით.</li>
+                <li id="c2-item3">🔴 <strong>Google Maps-ის გარეშე:</strong> დამატებითი საფასური.</li>
+                <li id="c2-item4">🔴 <strong>AI SEO-ს გარეშე:</strong> მხოლოდ ძველი, სტანდარტული SEO.</li>
+                <li id="c2-item5">🔴 <strong>ყოველთვიური გადასახადები:</strong> ჰოსტინგის/დომენის ხარჯები.</li>
+            </ul>
+        </div>
     </section>
 
     <!-- Process Steps -->
@@ -618,35 +637,39 @@
             <div>
                 <div class="price-title">Starter & 6-Mo Care</div>
                 <div class="price-value">290 ₾</div>
-                <div class="price-subtext">🛠️ მოიცავს 6 თვიან ტექ. მხარდაჭერას</div>
+                <div class="price-subtext" id="pkg1-sub">🛠️ მოიცავს 6 თვიან ტექ. მხარდაჭერას</div>
                 <ul class="price-features">
-                    <li>✓ 1-გვერდიანი modern დიზაინი</li>
-                    <li>✓ 100% მობილური ადაპტაცია</li>
-                    <li>✓ WhatsApp / Call 1-Click ჩაწერა</li>
-                    <li>✓ **6 თვე დეტალების/ფასების უფასო ცვლილება**</li>
-                    <li>✓ უფასო ჰოსტინგი (GitHub/Vercel)</li>
+                    <li id="pkg1-f1">✓ 1-გვერდიანი modern დიზაინი</li>
+                    <li id="pkg1-f2">✓ 100% მობილური ადაპტაცია</li>
+                    <li id="pkg1-f3">✓ WhatsApp / Call 1-Click ჩაწერა</li>
+                    <li id="pkg1-f4">✓ **6 თვე დეტალების/ფასების უფასო ცვლილება**</li>
+                    <li id="pkg1-f5">✓ 0 ₾ ყოველთვიური ჰოსტინგის ხარჯი</li>
                 </ul>
             </div>
-            <a href="https://wa.me/995557998522?text=Starter%20Package" class="btn btn-glass">არჩევა</a>
+            <a href="https://wa.me/995557998522?text=Starter%20Package" class="btn btn-glass" id="pkg1-btn">არჩევა</a>
         </div>
 
         <div class="price-card popular">
-            <div class="price-badge">ყველაზე პოპულარული</div>
+            <div class="price-badge" id="pkg2-badge">ყველაზე პოპულარული</div>
             <div>
                 <div class="price-title">Full Business & 1-Yr Care</div>
                 <div class="price-value">490 ₾</div>
-                <div class="price-subtext">🛡️ მოიცავს 1 წლიან სრულ პატრონობას</div>
+                <div class="price-subtext" id="pkg2-sub">🛡️ მოიცავს 1 წლიან სრულ პატრონობას</div>
                 <ul class="price-features">
-                    <li>✓ Starter-ის ყველა შესაძლებლობა</li>
-                    <li>✓ Google Business Profile (Maps) გამართვა</li>
-                    <li>✓ GEO / AI SEO სტრუქტურირება</li>
-                    <li>✓ მრავალენოვანი მხარდაჭერა (GE/EN/RU)</li>
-                    <li>✓ **12 თვე ტექსტების/ფოტოების/ფასების უწყვეტი ჩასწორება**</li>
+                    <li id="pkg2-f1">✓ Starter-ის ყველა შესაძლებლობა</li>
+                    <li id="pkg2-f2">✓ Google Business Profile (Maps) გამართვა</li>
+                    <li id="pkg2-f3">✓ GEO / AI SEO სტრუქტურირება</li>
+                    <li id="pkg2-f4">✓ მრავალენოვანი მხარდაჭერა (GE/EN/RU)</li>
+                    <li id="pkg2-f5">✓ **12 თვე ტექსტების/ფოტოების/ფასების უწყვეტი ჩასწორება**</li>
                 </ul>
             </div>
-            <a href="https://wa.me/995557998522?text=AI%20Package" class="btn btn-emerald">არჩევა</a>
+            <a href="https://wa.me/995557998522?text=AI%20Package" class="btn btn-emerald" id="pkg2-btn">არჩევა</a>
         </div>
     </section>
+
+    <div class="trust-banner" id="trust-text">
+        🔒 უსაფრთხო გადახდის პირობები: იხდით 30%-ს პროექტის დაწყებისას, ხოლო 70%-ს მხოლოდ საიტის სრული დამტკიცების შემდეგ.
+    </div>
 
     <!-- Showcase -->
     <div class="section-header" id="case-study">
@@ -661,7 +684,7 @@
                 <h3>GN Massage Tbilisi</h3>
                 <p id="case-desc">სპეციალიზებული სერვისული ბიზნესის ციფრული პლატფორმა: სტრუქტურირებული ფასები, ლოკაცია და სწრაფი ონლაინ ჩაწერა.</p>
                 
-                <div class="testimonial-quote">
+                <div class="testimonial-quote" id="case-quote">
                     "საიტისა და Google Maps-ის გამართვის შემდეგ, სოციალური ქსელებიდან მოსული ვიზიტორების 80% პირდაპირ WhatsApp-ში ჩაეწერა, რითაც დავზოგეთ Direct-ში პასუხების წერის დრო."
                 </div>
 
@@ -684,22 +707,22 @@
 
     <!-- FAQ Section -->
     <div class="section-header">
-        <h2>ხშირად დასმული კითხვები (FAQ)</h2>
-        <p>ყველაფერი, რაც უნდა იცოდეთ სერვისის შესახებ</p>
+        <h2 id="faq-title">ხშირად დასმული კითხვები (FAQ)</h2>
+        <p id="faq-sub">ყველაფერი, რაც უნდა იცოდეთ სერვისის შესახებ</p>
     </div>
 
     <section class="faq-container">
         <div class="faq-item" onclick="toggleFaq(this)">
-            <div class="faq-question">როგორ მუშაობს 1-წლიანი უფასო მხარდაჭერა? <span>+</span></div>
-            <div class="faq-answer">საიტის გაშვების შემდეგ, ნებისმიერ დროს, როცა მოგინდებათ ფასის შეცვლა, ახალი ფოტოს ჩამატება ან ტექსტის ჩასწორება, უბრალოდ გვწერთ WhatsApp-ში და ჩვენ მას 15-30 წუთში უფასოდ განგიახლებთ.</div>
+            <div class="faq-question" id="faq1-q">როგორ მუშაობს 1-წლიანი უფასო მხარდაჭერა? <span>+</span></div>
+            <div class="faq-answer" id="faq1-a">საიტის გაშვების შემდეგ, ნებისმიერ დროს, როცა მოგინდებათ ფასის შეცვლა, ახალი ფოტოს ჩამატება ან ტექსტის ჩასწორება, უბრალოდ გვწერთ WhatsApp-ში და ჩვენ მას 15-30 წუთში უფასოდ განგიახლებთ.</div>
         </div>
         <div class="faq-item" onclick="toggleFaq(this)">
-            <div class="faq-question">რა არის Generative AI SEO (GEO)? <span>+</span></div>
-            <div class="faq-answer">ეს არის საიტის ტექსტების და კოდის სპეციალური სტრუქტურირება (Schema markup), რომლის მეშვეობითაც ChatGPT, Gemini და Google Search მარტივად აღიქვამენ თქვენს ბიზნესს და მომხმარებლებს რეკომენდაციას უწევენ.</div>
+            <div class="faq-question" id="faq2-q">რა არის Generative AI SEO (GEO)? <span>+</span></div>
+            <div class="faq-answer" id="faq2-a">ეს არის საიტის ტექსტების და კოდის სპეციალური სტრუქტურირება (Schema markup), რომლის მეშვეობითაც ChatGPT, Gemini და Google Search მარტივად აღიქვამენ თქვენს ბიზნესს და მომხმარებლებს რეკომენდაციას უწევენ.</div>
         </div>
         <div class="faq-item" onclick="toggleFaq(this)">
-            <div class="faq-question">მჭირდება თუ არა ყოველთვიური ჰოსტინგის გადასახადი? <span>+</span></div>
-            <div class="faq-answer">არა! საიტი თავსდება უსწრაფეს და უსაფრთხო გლობალურ სერვერებზე (GitHub Pages / Vercel Edge), შესაბამისად ყოველთვიური ჰოსტინგის გადასახადი არ გაქვთ.</div>
+            <div class="faq-question" id="faq3-q">მჭირდება თუ არა ყოველთვიური ჰოსტინგის გადასახადი? <span>+</span></div>
+            <div class="faq-answer" id="faq3-a">არა! საიტი თავსდება უსწრაფეს და უსაფრთხო გლობალურ Cloud-სერვერებზე, შესაბამისად ყოველთვიური ჰოსტინგის გადასახადი არ გაქვთ.</div>
         </div>
     </section>
 
@@ -757,6 +780,18 @@
                 calcRes2: "წლიური დანაზოგი პირდაპირი საიტით:",
                 compTitle: "რატომ GN Web & AI Studio?",
                 compSub: "რით ვგანსხვავდებით ჩვეულებრივი ფრილანსერებისა და სააგენტოებისგან",
+                c1Head: "✨ GN Web & AI Studio",
+                c1Item1: "🟢 <strong>48 საათში მზადყოფნა:</strong> სწრაფი გაშვება ბიუროკრატიის გარეშე.",
+                c1Item2: "🟢 <strong>1-წლიანი სრული პატრონობა:</strong> ტექსტების/ფასების უფასო ჩასწორება.",
+                c1Item3: "🟢 <strong>Google Maps (GBP) გამართვა:</strong> ლოკალური კლიენტების ნაკადი.",
+                c1Item4: "🟢 <strong>Generative AI SEO:</strong> ChatGPT-სა და Gemini-ში პოზიციონირება.",
+                c1Item5: "🟢 <strong>0 ₾ ყოველთვიური ჰოსტინგის ხარჯი:</strong> უსწრაფესი Cloud სერვერები.",
+                c2Head: "❌ ჩვეულებრივი მიდგომა",
+                c2Item1: "🔴 <strong>2-4 კვირის ლოდინი:</strong> გაჭიმული ვადები და რთული პროცესი.",
+                c2Item2: "🔴 <strong>მხარდაჭერის გარეშე:</strong> საიტის ჩაბარების შემდეგ მარტო რჩებით.",
+                c2Item3: "🔴 <strong>Google Maps-ის გარეშე:</strong> დამატებითი საფასური.",
+                c2Item4: "🔴 <strong>AI SEO-ს გარეშე:</strong> მხოლოდ ძველი, სტანდარტული SEO.",
+                c2Item5: "🔴 <strong>ყოველთვიური გადასახადები:</strong> ჰოსტინგის/დომენის ხარჯები.",
                 processTitle: "როგორ ვმუშაობთ? (3 მარტივი ნაბიჯი)",
                 processSub: "თქვენ არ გჭირდებათ კოდის ცოდნა — ჩვენ ვზრუნავთ ყველაფერზე",
                 p1Title: "ინფორმაციის გაზიარება",
@@ -767,10 +802,35 @@
                 p3Desc: "საიტი ცოცხლდება. შემდეგი 6-12 თვე ჩვენ ვცვლით ნებისმიერ დეტალს თქვენი მოთხოვნით.",
                 pricingTitle: "პაკეტები & 1-წლიანი მხარდაჭერა",
                 pricingSub: "საიტის დამზადება + უწყვეტი ტექნიკური პატრონობა",
+                pkg1Sub: "🛠️ მოიცავს 6 თვიან ტექ. მხარდაჭერას",
+                pkg1F1: "✓ 1-გვერდიანი modern დიზაინი",
+                pkg1F2: "✓ 100% მობილური ადაპტაცია",
+                pkg1F3: "✓ WhatsApp / Call 1-Click ჩაწერა",
+                pkg1F4: "✓ **6 თვე დეტალების/ფასების უფასო ცვლილება**",
+                pkg1F5: "✓ 0 ₾ ყოველთვიური ჰოსტინგის ხარჯი",
+                pkg1Btn: "არჩევა",
+                pkg2Badge: "ყველაზე პოპულარული",
+                pkg2Sub: "🛡️ მოიცავს 1 წლიან სრულ პატრონობას",
+                pkg2F1: "✓ Starter-ის ყველა შესაძლებლობა",
+                pkg2F2: "✓ Google Business Profile (Maps) გამართვა",
+                pkg2F3: "✓ GEO / AI SEO სტრუქტურირება",
+                pkg2F4: "✓ მრავალენოვანი მხარდაჭერა (GE/EN/RU)",
+                pkg2F5: "✓ **12 თვე ტექსტების/ფოტოების/ფასების უწყვეტი ჩასწორება**",
+                pkg2Btn: "არჩევა",
+                trustText: "🔒 უსაფრთხო გადახდის პირობები: იხდით 30%-ს პროექტის დაწყებისას, ხოლო 70%-ს მხოლოდ საიტის სრული დამტკიცების შემდეგ.",
                 caseTitle: "რეალური ქეისი",
                 caseSub: "როგორ მუშაობს ჩვენი სისტემა პრაქტიკაში",
                 caseDesc: "სპეციალიზებული სერვისული ბიზნესის ციფრული პლატფორმა: სტრუქტურირებული ფასები, ლოკაცია და სწრაფი ონლაინ ჩაწერა.",
+                caseQuote: '"საიტისა და Google Maps-ის გამართვის შემდეგ, სოციალური ქსელებიდან მოსული ვიზიტორების 80% პირდაპირ WhatsApp-ში ჩაეწერა, რითაც დავზოგეთ Direct-ში პასუხების წერის დრო."',
                 caseLink: "ცოცხალი საიტის ნახვა 🔗",
+                faqTitle: "ხშირად დასმული კითხვები (FAQ)",
+                faqSub: "ყველაფერი, რაც უნდა იცოდეთ სერვისის შესახებ",
+                faq1Q: "როგორ მუშაობს 1-წლიანი უფასო მხარდაჭერა? <span>+</span>",
+                faq1A: "საიტის გაშვების შემდეგ, ნებისმიერ დროს, როცა მოგინდებათ ფასის შეცვლა, ახალი ფოტოს ჩამატება ან ტექსტის ჩასწორება, უბრალოდ გვწერთ WhatsApp-ში და ჩვენ მას 15-30 წუთში უფასოდ განგიახლებთ.",
+                faq2Q: "რა არის Generative AI SEO (GEO)? <span>+</span>",
+                faq2A: "ეს არის საიტის ტექსტების და კოდის სპეციალური სტრუქტურირება (Schema markup), რომლის მეშვეობითაც ChatGPT, Gemini და Google Search მარტივად აღიქვამენ თქვენს ბიზნესს და მომხმარებლებს რეკომენდაციას უწევენ.",
+                faq3Q: "მჭირდება თუ არა ყოველთვიური ჰოსტინგის გადასახადი? <span>+</span>",
+                faq3A: "არა! საიტი თავსდება უსწრაფეს და უსაფრთხო გლობალურ Cloud-სერვერებზე, შესაბამისად ყოველთვიური ჰოსტინგის გადასახადი არ გაქვთ.",
                 ctaTitle: "მზად ხართ ციფრული ტრანსფორმაციისთვის?",
                 ctaSub: "შევქმნათ უნიკალური საიტი + 1-წლიანი მხარდაჭერა თქვენი ბიზნესისთვის.",
                 ctaBtn: "📲 მოგვწერეთ WhatsApp-ში კონსულტაციისთვის"
@@ -792,6 +852,18 @@
                 calcRes2: "Annual Savings With Direct Site:",
                 compTitle: "Why Choose GN Web & AI Studio?",
                 compSub: "How we differ from traditional freelancers and agencies",
+                c1Head: "✨ GN Web & AI Studio",
+                c1Item1: "🟢 <strong>Ready in 48 Hours:</strong> Fast launch with zero bureaucracy.",
+                c1Item2: "🟢 <strong>1-Year Full Managed Care:</strong> Free updates for text and prices.",
+                c1Item3: "🟢 <strong>Google Maps (GBP) Setup:</strong> Inflow of local customers.",
+                c1Item4: "🟢 <strong>Generative AI SEO:</strong> Recommendation in ChatGPT & Gemini.",
+                c1Item5: "🟢 <strong>$0 Monthly Hosting Fees:</strong> High-speed Cloud servers.",
+                c2Head: "❌ Traditional Approach",
+                c2Item1: "🔴 <strong>2-4 Weeks Waiting:</strong> Stretched timelines and complex processes.",
+                c2Item2: "🔴 <strong>Zero Support:</strong> Left alone after site delivery.",
+                c2Item3: "🔴 <strong>No Google Maps Setup:</strong> Extra fees required.",
+                c2Item4: "🔴 <strong>No AI SEO:</strong> Only old, basic SEO.",
+                c2Item5: "🔴 <strong>Monthly Recurring Fees:</strong> Hosting and domain maintenance costs.",
                 processTitle: "How We Work (3 Simple Steps)",
                 processSub: "No coding skills required — we handle everything for you",
                 p1Title: "Share Details",
@@ -802,10 +874,35 @@
                 p3Desc: "Site goes live. We update any content for you for the next 6-12 months.",
                 pricingTitle: "Packages & 1-Year Support",
                 pricingSub: "Website creation + continuous technical maintenance",
+                pkg1Sub: "🛠️ Includes 6-Month Tech Support",
+                pkg1F1: "✓ 1-Page Modern Design",
+                pkg1F2: "✓ 100% Mobile Responsive",
+                pkg1F3: "✓ WhatsApp / Call 1-Click Booking",
+                pkg1F4: "✓ **6 Months Free Content Updates**",
+                pkg1F5: "✓ $0 Monthly Hosting Costs",
+                pkg1Btn: "Select",
+                pkg2Badge: "Most Popular",
+                pkg2Sub: "🛡️ Includes 1-Year Full Managed Support",
+                pkg2F1: "✓ All Starter Features Included",
+                pkg2F2: "✓ Google Business Profile (Maps) Setup",
+                pkg2F3: "✓ GEO / AI SEO Structuring",
+                pkg2F4: "✓ Multi-language Support (GE/EN/RU)",
+                pkg2F5: "✓ **12 Months Continuous Updates (Text/Prices/Photos)**",
+                pkg2Btn: "Select",
+                trustText: "🔒 Secure Payment Terms: Pay 30% upfront, and the remaining 70% only after final approval of your site.",
                 caseTitle: "Real Case Study",
                 caseSub: "How our system works in practice",
                 caseDesc: "Digital platform for a service business: structured pricing, location, and quick online booking.",
+                caseQuote: '"After setting up the site and Google Maps, 80% of visitors from social media booked directly via WhatsApp, saving us hours of writing DMs."',
                 caseLink: "View Live Site 🔗",
+                faqTitle: "Frequently Asked Questions (FAQ)",
+                faqSub: "Everything you need to know about our service",
+                faq1Q: "How does the 1-year free support work? <span>+</span>",
+                faq1A: "After launch, whenever you need to change a price, photo, or text, simply message us on WhatsApp and we will update it for free within 15-30 minutes.",
+                faq2Q: "What is Generative AI SEO (GEO)? <span>+</span>",
+                faq2A: "It is specialized data structuring (Schema markup) that enables ChatGPT, Gemini, and Google Search to understand and recommend your business to users.",
+                faq3Q: "Do I need to pay monthly hosting fees? <span>+</span>",
+                faq3A: "No! Your site is hosted on ultra-fast and secure global Cloud infrastructure with zero recurring hosting costs.",
                 ctaTitle: "Ready for Digital Transformation?",
                 ctaSub: "Let's build a custom site with 1-year maintenance for your business.",
                 ctaBtn: "📲 Contact via WhatsApp for Consultation"
@@ -827,6 +924,18 @@
                 calcRes2: "Годовая экономия с прямым сайтом:",
                 compTitle: "Почему GN Web & AI Studio?",
                 compSub: "Чем мы отличаемся от обычных фрилансеров и агентств",
+                c1Head: "✨ GN Web & AI Studio",
+                c1Item1: "🟢 <strong>Готовность за 48 часов:</strong> Быстрый запуск без бюрократии.",
+                c1Item2: "🟢 <strong>1 год полной поддержки:</strong> Бесплатное изменение текстов и цен.",
+                c1Item3: "🟢 <strong>Настройка Google Maps (GBP):</strong> Поток локальных клиентов.",
+                c1Item4: "🟢 <strong>Generative AI SEO:</strong> Рекомендации в ChatGPT и Gemini.",
+                c1Item5: "🟢 <strong>0 ₾ ежемесячных расходов:</strong> Быстрые Cloud-серверы.",
+                c2Head: "❌ Обычный подход",
+                c2Item1: "🔴 <strong>2-4 недели ожидания:</strong> Затянутые сроки и сложный процесс.",
+                c2Item2: "🔴 <strong>Без поддержки:</strong> Вы остаетесь один на один с сайтом.",
+                c2Item3: "🔴 <strong>Без Google Maps:</strong> Требуется доплата.",
+                c2Item4: "🔴 <strong>Без AI SEO:</strong> Только стандартное старое SEO.",
+                c2Item5: "🔴 <strong>Ежемесячные платежи:</strong> Затраты на хостинг и домен.",
                 processTitle: "Как мы работаем (3 простых шага)",
                 processSub: "Вам не нужно знать код — мы позаботимся обо всем",
                 p1Title: "Передайте детали",
@@ -837,10 +946,35 @@
                 p3Desc: "Сайт запускается. Мы бесплатно обновляем детали в течение 6-12 месяцев.",
                 pricingTitle: "Пакеты и Поддержка 1 Год",
                 pricingSub: "Создание сайта + непрерывное техническое обслуживание",
+                pkg1Sub: "🛠️ Включает 6 месяцев тех. поддержки",
+                pkg1F1: "✓ 1-страничный Modern дизайн",
+                pkg1F2: "✓ 100% мобильная адаптация",
+                pkg1F3: "✓ Запись в WhatsApp / Звонок в 1 клик",
+                pkg1F4: "✓ **6 месяцев бесплатной правки деталей/цен**",
+                pkg1F5: "✓ 0 ₾ ежемесячных расходов на хостинг",
+                pkg1Btn: "Выбрать",
+                pkg2Badge: "Самый популярный",
+                pkg2Sub: "🛡️ Включает 1 год полного обслуживания",
+                pkg2F1: "✓ Все возможности пакета Starter",
+                pkg2F2: "✓ Настройка Google Business Profile (Maps)",
+                pkg2F3: "✓ Структурирование GEO / AI SEO",
+                pkg2F4: "✓ Мультиязычная поддержка (GE/EN/RU)",
+                pkg2F5: "✓ **12 месяцев непрерывной правки текстов/цен/фото**",
+                pkg2Btn: "Выбрать",
+                trustText: "🔒 Безопасная оплата: 30% предоплата при старте, а 70% — только после полного утверждения сайта.",
                 caseTitle: "Реальный кейс",
                 caseSub: "Как наша система работает на практике",
                 caseDesc: "Цифровая платформа для сервисного бизнеса: структурированные цены, локация и быстрая онлайн-запись.",
+                caseQuote: '"После настройки сайта и Google Maps 80% посетителей из соцсетей записались напрямую через WhatsApp, сэкономив нам время на ответы в Direct."',
                 caseLink: "Смотреть живой сайт 🔗",
+                faqTitle: "Часто задаваемые вопросы (FAQ)",
+                faqSub: "Все, что вам нужно знать о сервисе",
+                faq1Q: "Как работает 1 год бесплатной поддержки? <span>+</span>",
+                faq1A: "После запуска в любое время, когда вам понадобится изменить цену, добавить фото или исправить текст, просто напишите нам в WhatsApp, и мы обновим это бесплатно за 15-30 минут.",
+                faq2Q: "Что такое Generative AI SEO (GEO)? <span>+</span>",
+                faq2A: "Это специальная структуризация данных (Schema markup), благодаря которой ChatGPT, Gemini и Google Search легко распознают ваш бизнес и рекомендуют его пользователям.",
+                faq3Q: "Нужно ли платить ежемесячно за хостинг? <span>+</span>",
+                faq3A: "Нет! Ваш сайт размещается на ультрабыстрых и безопасных облачных серверах с 0 ₾ ежемесячных расходов.",
                 ctaTitle: "Готовы к цифровой трансформации?",
                 ctaSub: "Создадим сайт + 1 год поддержки под ваш бизнес.",
                 ctaBtn: "📲 Написать в WhatsApp для консультации"
@@ -854,7 +988,7 @@
             const t = translations[lang];
             document.getElementById('hero-badge').innerText = t.badge;
             document.getElementById('hero-title').innerHTML = t.heroTitle;
-            document.getElementById('hero-desc').innerText = t.heroDesc;
+            document.getElementById('hero-desc').innerHTML = t.heroDesc;
             document.getElementById('hero-cta1').innerText = t.heroCta1;
             document.getElementById('hero-cta2').innerText = t.heroCta2;
             document.getElementById('stat-1').innerText = t.stat1;
@@ -863,10 +997,25 @@
             document.getElementById('stat-4').innerText = t.stat4;
             document.getElementById('calc-title').innerText = t.calcTitle;
             document.getElementById('calc-sub').innerText = t.calcSub;
+            document.getElementById('calc-label').innerHTML = `${t.calcLabel} <strong id="calc-rev-val">5000</strong> ₾`;
             document.getElementById('calc-res1-label').innerText = t.calcRes1;
             document.getElementById('calc-res2-label').innerText = t.calcRes2;
+            
             document.getElementById('comp-title').innerText = t.compTitle;
             document.getElementById('comp-sub').innerText = t.compSub;
+            document.getElementById('c1-head').innerText = t.c1Head;
+            document.getElementById('c1-item1').innerHTML = t.c1Item1;
+            document.getElementById('c1-item2').innerHTML = t.c1Item2;
+            document.getElementById('c1-item3').innerHTML = t.c1Item3;
+            document.getElementById('c1-item4').innerHTML = t.c1Item4;
+            document.getElementById('c1-item5').innerHTML = t.c1Item5;
+            document.getElementById('c2-head').innerText = t.c2Head;
+            document.getElementById('c2-item1').innerHTML = t.c2Item1;
+            document.getElementById('c2-item2').innerHTML = t.c2Item2;
+            document.getElementById('c2-item3').innerHTML = t.c2Item3;
+            document.getElementById('c2-item4').innerHTML = t.c2Item4;
+            document.getElementById('c2-item5').innerHTML = t.c2Item5;
+
             document.getElementById('process-title').innerText = t.processTitle;
             document.getElementById('process-sub').innerText = t.processSub;
             document.getElementById('p1-title').innerText = t.p1Title;
@@ -875,15 +1024,48 @@
             document.getElementById('p2-desc').innerText = t.p2Desc;
             document.getElementById('p3-title').innerText = t.p3Title;
             document.getElementById('p3-desc').innerText = t.p3Desc;
+
             document.getElementById('pricing-title').innerText = t.pricingTitle;
             document.getElementById('pricing-sub').innerText = t.pricingSub;
+            document.getElementById('pkg1-sub').innerText = t.pkg1Sub;
+            document.getElementById('pkg1-f1').innerText = t.pkg1F1;
+            document.getElementById('pkg1-f2').innerText = t.pkg1F2;
+            document.getElementById('pkg1-f3').innerText = t.pkg1F3;
+            document.getElementById('pkg1-f4').innerHTML = t.pkg1F4;
+            document.getElementById('pkg1-f5').innerText = t.pkg1F5;
+            document.getElementById('pkg1-btn').innerText = t.pkg1Btn;
+
+            document.getElementById('pkg2-badge').innerText = t.pkg2Badge;
+            document.getElementById('pkg2-sub').innerText = t.pkg2Sub;
+            document.getElementById('pkg2-f1').innerText = t.pkg2F1;
+            document.getElementById('pkg2-f2').innerText = t.pkg2F2;
+            document.getElementById('pkg2-f3').innerText = t.pkg2F3;
+            document.getElementById('pkg2-f4').innerText = t.pkg2F4;
+            document.getElementById('pkg2-f5').innerHTML = t.pkg2F5;
+            document.getElementById('pkg2-btn').innerText = t.pkg2Btn;
+
+            document.getElementById('trust-text').innerText = t.trustText;
+
             document.getElementById('case-title').innerText = t.caseTitle;
             document.getElementById('case-sub').innerText = t.caseSub;
             document.getElementById('case-desc').innerText = t.caseDesc;
+            document.getElementById('case-quote').innerText = t.caseQuote;
             document.getElementById('case-link').innerText = t.caseLink;
+
+            document.getElementById('faq-title').innerText = t.faqTitle;
+            document.getElementById('faq-sub').innerText = t.faqSub;
+            document.getElementById('faq1-q').innerHTML = t.faq1Q;
+            document.getElementById('faq1-a').innerText = t.faq1A;
+            document.getElementById('faq2-q').innerHTML = t.faq2Q;
+            document.getElementById('faq2-a').innerText = t.faq2A;
+            document.getElementById('faq3-q').innerHTML = t.faq3Q;
+            document.getElementById('faq3-a').innerText = t.faq3A;
+
             document.getElementById('cta-title').innerText = t.ctaTitle;
             document.getElementById('cta-sub').innerText = t.ctaSub;
             document.getElementById('cta-btn').innerText = t.ctaBtn;
+
+            updateCalc();
         }
     </script>
 </body>
