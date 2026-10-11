@@ -486,10 +486,10 @@
         <div class="logo">GN WEB & AI</div>
         <div class="nav-right">
             <div class="lang-switcher">
-                <!-- ენის გადამრთველები გამართული data-lang ლოგიკით -->
-                <button class="lang-btn active" data-lang="ka" onclick="setLanguage('ka')">GE</button>
-                <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
-                <button class="lang-btn" data-lang="ru" onclick="setLanguage('ru')">RU</button>
+                <!-- ენის ღილაკები data-lang ატრიბუტებით -->
+                <button class="lang-btn active" data-lang="ka" onclick="setLanguage('ka', this)">GE</button>
+                <button class="lang-btn" data-lang="en" onclick="setLanguage('en', this)">EN</button>
+                <button class="lang-btn" data-lang="ru" onclick="setLanguage('ru', this)">RU</button>
             </div>
             <a href="https://wa.me/995557998522?text=Gamarjoba" class="btn btn-emerald" target="_blank">💬 WhatsApp</a>
         </div>
@@ -622,7 +622,7 @@
                     <li id="pkg1-f1">✓ 1-გვერდიანი modern დიზაინი</li>
                     <li id="pkg1-f2">✓ 100% მობილური ადაპტაცია</li>
                     <li id="pkg1-f3">✓ WhatsApp / Call 1-Click ჩაწერა</li>
-                    <li id="pkg1-f4">✓ **30 დღე დეტალების/ფასების უფასო ცვლილება**</li>
+                    <li id="pkg1-f4">✓ <strong>30 დღე დეტალების/ფასების უფასო ცვლილება</strong></li>
                     <li id="pkg1-f5">✓ 0 ₾ ყოველთვიური ჰოსტინგის ხარჯი</li>
                 </ul>
             </div>
@@ -641,7 +641,7 @@
                     <li id="pkg2-f2">✓ Google Business Profile (Maps) გამართვა</li>
                     <li id="pkg2-f3">✓ GEO / AI SEO სტრუქტურირება (ChatGPT/Gemini)</li>
                     <li id="pkg2-f4">✓ მრავალენოვანი მხარდაჭერა (GE/EN/RU)</li>
-                    <li id="pkg2-f5">✓ **6 თვე მხარდაჭერა** (მაქს. 3 ცვლილება/თვეში)</li>
+                    <li id="pkg2-f5">✓ <strong>6 თვე მხარდაჭერა</strong> (მაქს. 3 ცვლილება/თვეში)</li>
                 </ul>
             </div>
             <a href="https://wa.me/995557998522?text=Business%20Pro%20Package%20(690GEL)" class="btn btn-emerald" id="pkg2-btn">არჩევა</a>
@@ -656,9 +656,9 @@
                 <ul class="price-features">
                     <li id="pkg3-f1">✓ Business Pro-ს ყველა შესაძლებლობა</li>
                     <li id="pkg3-f2">✓ Meta (FB/IG) & TikTok Pixel ინტეგრაცია</li>
-                    <li id="pkg3-f3">✓ 🎬 **Reels / Shorts ვიდეო-კონტენტის სტრატეგია**</li>
+                    <li id="pkg3-f3">✓ 🎬 <strong>Reels / Shorts ვიდეო-კონტენტის სტრატეგია</strong></li>
                     <li id="pkg3-f4">✓ გაფართოებული სექციები (FAQ, გალერეა)</li>
-                    <li id="pkg3-f5">✓ **12 თვე VIP მხარდაჭერა** (მაქს. 6 ცვლილება/თვეში)</li>
+                    <li id="pkg3-f5">✓ <strong>12 თვე VIP მხარდაჭერა</strong> (მაქს. 6 ცვლილება/თვეში)</li>
                 </ul>
             </div>
             <a href="https://wa.me/995557998522?text=Premium%20VIP%20Package%20(1190GEL)" class="btn btn-glass" id="pkg3-btn">არჩევა</a>
@@ -701,7 +701,7 @@
         <div class="contact-box">
             <a href="tel:+995557998522" class="contact-item">📞 <span>+995 557 99 85 22</span></a>
             <a href="mailto:gnadiradzeee@gmail.com" class="contact-item">✉️ <span>gnadiradzeee@gmail.com</span></a>
-            <a href="https://wa.me/995557998522" target="_blank" class="contact-item">💬 <span>WhatsApp Direct Chat</span></a>
+            <a href="https://wa.me/995557998522" target="_blank" class="contact-item" id="contact-chat">💬 <span>WhatsApp Direct Chat</span></a>
         </div>
 
         <br><br>
@@ -711,7 +711,7 @@
     </section>
 
     <footer>
-        <p>© 2026 GN Web & AI Studio. ყველა უფლება დაცულია.</p>
+        <p id="footer-text">© 2026 GN Web & AI Studio. ყველა უფლება დაცულია.</p>
     </footer>
 
     <script>
@@ -720,19 +720,26 @@
             document.getElementById('calc-rev-val').innerText = rev.toLocaleString();
             const loss = Math.round(rev * 0.15);
             const save = loss * 12;
-            document.getElementById('calc-loss').innerText = `-${loss.toLocaleString()} ₾ / თვეში`;
-            document.getElementById('calc-save').innerText = `+${save.toLocaleString()} ₾ / წელიწადში`;
+            
+            // ვიღებთ ენას და შესაბამის ტექსტს კალკულატორისთვის
+            const activeBtn = document.querySelector('.lang-btn.active');
+            const lang = activeBtn ? activeBtn.getAttribute('data-lang') : 'ka';
+            const t = translations[lang];
+
+            document.getElementById('calc-loss').innerText = `-${loss.toLocaleString()} ${t.calcPerMonth}`;
+            document.getElementById('calc-save').innerText = `+${save.toLocaleString()} ${t.calcPerYear}`;
         }
 
         function toggleFaq(el) {
             el.classList.toggle('open');
         }
 
+        // სრული 3-ენოვანი ობიექტი
         const translations = {
             ka: {
                 badge: "Enterprise Conversion Engine",
                 heroTitle: 'AI ინტეგრაცია და სწორად შექმნილი პლატფორმა, რომელიც თქვენს კომპანიას <span>ბაზრის ლიდერად აქცევს</span>',
-                heroDesc: "ვქმნით AI-Ready ციფრულ ინფრასტრუქტურას, რომელიც ინსტაგრამის ვიზიტორებსა და AI-საძიებო სისტემებს პირდაპირ თქვენს WhatsApp-ში ჩასაწერად გადმოამისამართებს.",
+                heroDesc: "ვქმნით AI-Ready ციფრულ ინფრასტრუქტურას, რომელიც ინსტაგრამის ვიზიტორებსა და AI-საძიებო სისტემებს (ChatGPT, Gemini) პირდაპირ თქვენს WhatsApp-ში ჩასაწერად გადმოამისამართებს.",
                 heroCta1: "დაიწყეთ პროექტი დღესვე",
                 heroCta2: "პაკეტების ნახვა ➔",
                 stat1: "Google PageSpeed Score",
@@ -744,6 +751,8 @@
                 calcLabel: "თქვენი თვიური შემოსავალი:",
                 calcRes1: "საკომისიო სხვა პლატფორმებზე (15%):",
                 calcRes2: "წლიური დანაზოგი პირდაპირი საიტით:",
+                calcPerMonth: "₾ / თვეში",
+                calcPerYear: "₾ / წელიწადში",
                 compTitle: "რატომ GN Web & AI Studio?",
                 compSub: "რით ვგანსხვავდებით ჩვეულებრივი ფრილანსერებისა და სააგენტოებისგან",
                 c1Head: "✨ GN Web & AI Studio",
@@ -772,7 +781,7 @@
                 pkg1F1: "✓ 1-გვერდიანი modern დიზაინი",
                 pkg1F2: "✓ 100% მობილური ადაპტაცია",
                 pkg1F3: "✓ WhatsApp / Call 1-Click ჩაწერა",
-                pkg1F4: "✓ **30 დღე დეტალების/ფასების უფასო ცვლილება**",
+                pkg1F4: "✓ <strong>30 დღე დეტალების/ფასების უფასო ცვლილება</strong>",
                 pkg1F5: "✓ 0 ₾ ყოველთვიური ჰოსტინგის ხარჯი",
                 pkg1Btn: "არჩევა",
                 pkg2Badge: "ყველაზე პოპულარული",
@@ -781,14 +790,14 @@
                 pkg2F2: "✓ Google Business Profile (Maps) გამართვა",
                 pkg2F3: "✓ GEO / AI SEO სტრუქტურირება (ChatGPT/Gemini)",
                 pkg2F4: "✓ მრავალენოვანი მხარდაჭერა (GE/EN/RU)",
-                pkg2F5: "✓ **6 თვე მხარდაჭერა** (მაქს. 3 ცვლილება/თვეში)",
+                pkg2F5: "✓ <strong>6 თვე მხარდაჭერა</strong> (მაქს. 3 ცვლილება/თვეში)",
                 pkg2Btn: "არჩევა",
                 pkg3Sub: "💳 ან <strong>~298 ₾ / თვეში</strong> (4 თვიანი შიდა გადანაწილებით)",
                 pkg3F1: "✓ Business Pro-ს ყველა შესაძლებლობა",
                 pkg3F2: "✓ Meta (FB/IG) & TikTok Pixel ინტეგრაცია",
-                pkg3F3: "✓ 🎬 **Reels / Shorts ვიდეო-კონტენტის სტრატეგია**",
+                pkg3F3: "✓ 🎬 <strong>Reels / Shorts ვიდეო-კონტენტის სტრატეგია</strong>",
                 pkg3F4: "✓ გაფართოებული სექციები (FAQ, გალერეა)",
-                pkg3F5: "✓ **12 თვე VIP მხარდაჭერა** (მაქს. 6 ცვლილება/თვეში)",
+                pkg3F5: "✓ <strong>12 თვე VIP მხარდაჭერა</strong> (მაქს. 6 ცვლილება/თვეში)",
                 pkg3Btn: "არჩევა",
                 trustText: "🔒 გადახდის პირობები: შესაძლებელია შიდა 4-თვიანი გადანაწილება ან 30/70 მოდელი (30% სტარტზე, 70% დამტკიცებისას).<br><span style=\"color: #a5b4fc; font-size: 0.88rem;\">✨ <strong>მალე დაემატება:</strong> BOG & TBC ონლაინ \"ნაწილ-ნაწილ\" გადანაწილების სისტემა!</span>",
                 faqTitle: "ხშირად დასმული კითხვები (FAQ)",
@@ -801,7 +810,9 @@
                 faq3A: "არა! საიტი თავსდება უსწრაფეს და უსაფრთხო გლობალურ Cloud-სერვერებზე, შესაბამისად ყოველთვიური ჰოსტინგის გადასახადი არ გაქვთ (0 ₾).",
                 ctaTitle: "მზად ხართ ციფრული ტრანსფორმაციისთვის?",
                 ctaSub: "შევქმნათ უნიკალური საიტი + ტექნიკური მხარდაჭერა თქვენი ბიზნესისთვის.",
-                ctaBtn: "📲 მოგვწერეთ WhatsApp-ში კონსულტაციისთვის"
+                ctaBtn: "📲 მოგვწერეთ WhatsApp-ში კონსულტაციისთვის",
+                contactChat: "💬 <span>WhatsApp Direct Chat</span>",
+                footerText: "© 2026 GN Web & AI Studio. ყველა უფლება დაცულია."
             },
             en: {
                 badge: "Enterprise Conversion Engine",
@@ -818,6 +829,8 @@
                 calcLabel: "Your Monthly Revenue:",
                 calcRes1: "Platform Commissions (15%):",
                 calcRes2: "Annual Savings With Direct Site:",
+                calcPerMonth: "GEL / mo",
+                calcPerYear: "GEL / year",
                 compTitle: "Why Choose GN Web & AI Studio?",
                 compSub: "How we differ from traditional freelancers and agencies",
                 c1Head: "✨ GN Web & AI Studio",
@@ -846,7 +859,7 @@
                 pkg1F1: "✓ 1-Page Modern Design",
                 pkg1F2: "✓ 100% Mobile Responsive",
                 pkg1F3: "✓ WhatsApp / Call 1-Click Booking",
-                pkg1F4: "✓ **30 Days Free Content Updates**",
+                pkg1F4: "✓ <strong>30 Days Free Content Updates</strong>",
                 pkg1F5: "✓ $0 Monthly Hosting Costs",
                 pkg1Btn: "Select",
                 pkg2Badge: "Most Popular",
@@ -855,14 +868,14 @@
                 pkg2F2: "✓ Google Business Profile (Maps) Setup",
                 pkg2F3: "✓ GEO / AI SEO Structuring (ChatGPT/Gemini)",
                 pkg2F4: "✓ Multi-language Support (GE/EN/RU)",
-                pkg2F5: "✓ **6 Months Support** (Max 3 changes/mo)",
+                pkg2F5: "✓ <strong>6 Months Support</strong> (Max 3 changes/mo)",
                 pkg2Btn: "Select",
                 pkg3Sub: "💳 Or <strong>~298 GEL / mo</strong> (4-month internal split payment)",
                 pkg3F1: "✓ All Business Pro Features Included",
                 pkg3F2: "✓ Meta (FB/IG) & TikTok Pixel Integration",
-                pkg3F3: "✓ 🎬 **Reels / Shorts Video Strategy Consultation**",
+                pkg3F3: "✓ 🎬 <strong>Reels / Shorts Video Strategy Consultation</strong>",
                 pkg3F4: "✓ Extended Sections (FAQ, Gallery)",
-                pkg3F5: "✓ **12 Months VIP Support** (Max 6 changes/mo)",
+                pkg3F5: "✓ <strong>12 Months VIP Support</strong> (Max 6 changes/mo)",
                 pkg3Btn: "Select",
                 trustText: "🔒 Payment Terms: 4-month internal split payment or 30/70 model (30% upfront, 70% upon final approval).<br><span style=\"color: #a5b4fc; font-size: 0.88rem;\">✨ <strong>Coming Soon:</strong> BOG & TBC online part-by-part financing!</span>",
                 faqTitle: "Frequently Asked Questions (FAQ)",
@@ -875,7 +888,9 @@
                 faq3A: "No! Your site is hosted on ultra-fast and secure global Cloud infrastructure with zero recurring hosting costs ($0).",
                 ctaTitle: "Ready for Digital Transformation?",
                 ctaSub: "Let's build a custom site + technical maintenance for your business.",
-                ctaBtn: "📲 Contact via WhatsApp for Consultation"
+                ctaBtn: "📲 Contact via WhatsApp for Consultation",
+                contactChat: "💬 <span>WhatsApp Direct Chat</span>",
+                footerText: "© 2026 GN Web & AI Studio. All rights reserved."
             },
             ru: {
                 badge: "Enterprise Conversion Engine",
@@ -892,6 +907,8 @@
                 calcLabel: "Ваш месячный доход:",
                 calcRes1: "Комиссии платформ (15%):",
                 calcRes2: "Годовая экономия с прямым сайтом:",
+                calcPerMonth: "₾ / мес",
+                calcPerYear: "₾ / год",
                 compTitle: "Почему GN Web & AI Studio?",
                 compSub: "Чем мы отличаемся от обычных фрилансеров и агентств",
                 c1Head: "✨ GN Web & AI Studio",
@@ -920,7 +937,7 @@
                 pkg1F1: "✓ 1-страничный Modern дизайн",
                 pkg1F2: "✓ 100% мобильная адаптация",
                 pkg1F3: "✓ Запись в WhatsApp / Звонок в 1 клик",
-                pkg1F4: "✓ **30 дней бесплатной правки деталей/цен**",
+                pkg1F4: "✓ <strong>30 дней бесплатной правки деталей/цен</strong>",
                 pkg1F5: "✓ 0 ₾ ежемесячных расходов на хостинг",
                 pkg1Btn: "Выбрать",
                 pkg2Badge: "Самый популярный",
@@ -929,16 +946,16 @@
                 pkg2F2: "✓ Настройка Google Business Profile (Maps)",
                 pkg2F3: "✓ Структурирование GEO / AI SEO (ChatGPT/Gemini)",
                 pkg2F4: "✓ Мультиязычная поддержка (GE/EN/RU)",
-                pkg2F5: "✓ **6 месяцев поддержки** (Макс. 3 правки/мес)",
+                pkg2F5: "✓ <strong>6 месяцев поддержки</strong> (Макс. 3 правки/мес)",
                 pkg2Btn: "Выбрать",
                 pkg3Sub: "💳 Или <strong>~298 ₾ / мес</strong> (внутренняя рассрочка на 4 месяца)",
                 pkg3F1: "✓ Все возможности пакета Business Pro",
                 pkg3F2: "✓ Интеграция Meta (FB/IG) и TikTok Pixel",
-                pkg3F3: "✓ 🎬 **Консультация по Reels / Shorts видео-контенту**",
+                pkg3F3: "✓ 🎬 <strong>Консультация по Reels / Shorts видео-контенту</strong>",
                 pkg3F4: "✓ Расширенные секции (FAQ, галерея)",
-                pkg3F5: "✓ **12 месяцев VIP поддержки** (Макс. 6 правок/мес)",
+                pkg3F5: "✓ <strong>12 месяцев VIP поддержки</strong> (Макс. 6 правок/мес)",
                 pkg3Btn: "Выбрать",
-                trustText: "🔒 Условия оплаты: внутренняя рассрочка на 4 месяца или модель 30/70 (30% при старте, 70% при утверждении).<br><span style=\"color: #a5b4fc; font-size: 0.88rem;\">✨ <strong>Скоро:</strong> Добавится онлайн-рассрочка BOG & TBC!</span>",
+                trustText: "🔒 Условия оплаты: внутренняя рассрочка на 4 месяца или модель 30/70 (30% при старте, 70% при утверждении).<br><span style=\"color: #a5b4fc; font-size: 0.88rem;\">✨ <strong>В скором времени:</strong> Добавится онлайн-рассрочка BOG & TBC!</span>",
                 faqTitle: "Часто задаваемые вопросы (FAQ)",
                 faqSub: "Все, что вам нужно знать о сервисе",
                 faq1Q: "Как работает внутренняя рассрочка? <span>+</span>",
@@ -949,25 +966,23 @@
                 faq3A: "Нет! Ваш сайт размещается на ультрабыстрых и безопасных облачных серверах с 0 ₾ ежемесячных расходов.",
                 ctaTitle: "Готовы к цифровой трансформации?",
                 ctaSub: "Создадим сайт + техническую поддержку под ваш бизнес.",
-                ctaBtn: "📲 Написать в WhatsApp для консультации"
+                ctaBtn: "📲 Написать в WhatsApp для консультации",
+                contactChat: "💬 <span>Связаться в WhatsApp</span>",
+                footerText: "© 2026 GN Web & AI Studio. Все права защищены."
             }
         };
 
-        // სრულად გამართული ენის გადამრთველი ლოგიკა
-        function setLanguage(lang) {
-            // 1. ღილაკების ვიზუალის შეცვლა
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('data-lang') === lang) {
-                    btn.classList.add('active');
-                }
-            });
+        // ძირითადი ფუნქცია, რომელიც წამიერად ცვლის ყველა დეტალს!
+        function setLanguage(lang, targetBtn) {
+            
+            if (targetBtn) {
+                document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+                targetBtn.classList.add('active');
+            }
 
-            // 2. ტექსტების ამოღება ობიექტიდან
             const t = translations[lang];
             if (!t) return;
 
-            // 3. HTML ელემენტების განახლება
             document.getElementById('hero-badge').innerText = t.badge;
             document.getElementById('hero-title').innerHTML = t.heroTitle;
             document.getElementById('hero-desc').innerHTML = t.heroDesc;
@@ -977,9 +992,11 @@
             document.getElementById('stat-2').innerText = t.stat2;
             document.getElementById('stat-3').innerText = t.stat3;
             document.getElementById('stat-4').innerText = t.stat4;
+            
             document.getElementById('calc-title').innerText = t.calcTitle;
             document.getElementById('calc-sub').innerText = t.calcSub;
-            document.getElementById('calc-label').innerHTML = `${t.calcLabel} <strong id="calc-rev-val">5000</strong> ₾`;
+            // ვანახლებთ Label-ს ისე, რომ რიცხვი შენარჩუნდეს
+            document.getElementById('calc-label').innerHTML = `${t.calcLabel} <strong id="calc-rev-val">${document.getElementById('calc-range').value}</strong> ₾`;
             document.getElementById('calc-res1-label').innerText = t.calcRes1;
             document.getElementById('calc-res2-label').innerText = t.calcRes2;
             
@@ -1009,28 +1026,29 @@
 
             document.getElementById('pricing-title').innerText = t.pricingTitle;
             document.getElementById('pricing-sub').innerText = t.pricingSub;
+            
             document.getElementById('pkg1-sub').innerHTML = t.pkg1Sub;
-            document.getElementById('pkg1-f1').innerText = t.pkg1F1;
-            document.getElementById('pkg1-f2').innerText = t.pkg1F2;
-            document.getElementById('pkg1-f3').innerText = t.pkg1F3;
+            document.getElementById('pkg1-f1').innerHTML = t.pkg1F1;
+            document.getElementById('pkg1-f2').innerHTML = t.pkg1F2;
+            document.getElementById('pkg1-f3').innerHTML = t.pkg1F3;
             document.getElementById('pkg1-f4').innerHTML = t.pkg1F4;
-            document.getElementById('pkg1-f5').innerText = t.pkg1F5;
+            document.getElementById('pkg1-f5').innerHTML = t.pkg1F5;
             document.getElementById('pkg1-btn').innerText = t.pkg1Btn;
 
             document.getElementById('pkg2-badge').innerText = t.pkg2Badge;
             document.getElementById('pkg2-sub').innerHTML = t.pkg2Sub;
-            document.getElementById('pkg2-f1').innerText = t.pkg2F1;
-            document.getElementById('pkg2-f2').innerText = t.pkg2F2;
-            document.getElementById('pkg2-f3').innerText = t.pkg2F3;
-            document.getElementById('pkg2-f4').innerText = t.pkg2F4;
+            document.getElementById('pkg2-f1').innerHTML = t.pkg2F1;
+            document.getElementById('pkg2-f2').innerHTML = t.pkg2F2;
+            document.getElementById('pkg2-f3').innerHTML = t.pkg2F3;
+            document.getElementById('pkg2-f4').innerHTML = t.pkg2F4;
             document.getElementById('pkg2-f5').innerHTML = t.pkg2F5;
             document.getElementById('pkg2-btn').innerText = t.pkg2Btn;
 
             document.getElementById('pkg3-sub').innerHTML = t.pkg3Sub;
-            document.getElementById('pkg3-f1').innerText = t.pkg3F1;
-            document.getElementById('pkg3-f2').innerText = t.pkg3F2;
+            document.getElementById('pkg3-f1').innerHTML = t.pkg3F1;
+            document.getElementById('pkg3-f2').innerHTML = t.pkg3F2;
             document.getElementById('pkg3-f3').innerHTML = t.pkg3F3;
-            document.getElementById('pkg3-f4').innerText = t.pkg3F4;
+            document.getElementById('pkg3-f4').innerHTML = t.pkg3F4;
             document.getElementById('pkg3-f5').innerHTML = t.pkg3F5;
             document.getElementById('pkg3-btn').innerText = t.pkg3Btn;
 
@@ -1048,8 +1066,16 @@
             document.getElementById('cta-title').innerText = t.ctaTitle;
             document.getElementById('cta-sub').innerText = t.ctaSub;
             document.getElementById('cta-btn').innerText = t.ctaBtn;
+            
+            document.getElementById('contact-chat').innerHTML = t.contactChat;
+            document.getElementById('footer-text').innerText = t.footerText;
 
-            // 4. კალკულატორის მნიშვნელობების განახლება
+            // ვიძახებთ updateCalc-ს რომ კალკულატორის ციფრები ენის შესაბამისად განახლდეს
+            updateCalc();
+        }
+
+        // გვერდის ჩატვირთვისას ვაყენებთ საწყის მდგომარეობას
+        window.onload = function() {
             updateCalc();
         }
     </script>
