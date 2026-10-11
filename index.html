@@ -104,7 +104,7 @@
     <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-between p-2 shadow-lg shadow-cyan-500/20">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
                     <span class="font-extrabold text-xl text-white tracking-wider">GN</span>
                 </div>
                 <span class="font-bold text-lg sm:text-xl tracking-tight text-white">Web & AI Studio</span>
@@ -113,12 +113,13 @@
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
                 <a href="#services" class="hover:text-cyan-400 transition-colors">სერვისები</a>
                 <a href="#ai-geo" class="hover:text-cyan-400 transition-colors">AI & SEO</a>
+                <a href="#why-us" class="hover:text-cyan-400 transition-colors">უპირატესობები</a>
                 <a href="#pricing" class="hover:text-cyan-400 transition-colors">ფასები</a>
                 <a href="#portfolio" class="hover:text-cyan-400 transition-colors">პორტფოლიო</a>
             </nav>
 
             <div>
-                <a href="#pricing" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/20 transition-all hover:scale-105">
+                <a href="#pricing" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-cyan-500 hover:bg-cyan-600 text-slate-950 shadow-lg shadow-cyan-500/20 transition-all hover:scale-105">
                     შეკვეთა
                 </a>
             </div>
@@ -171,38 +172,74 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-slate-900/30 border-t border-slate-800/80">
+    <!-- Services Section (Detailed Grid) -->
+    <section id="services" class="py-20 bg-slate-900/30 border-t border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
-                <h2 class="text-2xl sm:text-3xl font-bold text-white">ჩვენი ძირითადი სერვისები</h2>
-                <p class="text-slate-400 text-xs sm:text-sm">ყველაფერი, რაც თქვენს ბიზნესს სჭირდება ონლაინ გაყიდვების დასაწყებად</p>
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">ჩვენი სრული სერვისები</h2>
+                <p class="text-slate-400 text-xs sm:text-sm">ყველაფერი, რაც თქვენს ბიზნესს სჭირდება ონლაინ გაყიდვებისა და ნდობის მოსაპოვებლად</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl font-bold mb-4">⚡</div>
-                    <h3 class="text-lg font-bold text-white mb-2">ულტრა-სწრაფი ვებ-საიტები</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">მობილურზე ოპტიმიზებული, 1-Click WhatsApp და სატელეფონო ღილაკებით აღჭურვილი სავიზიტო და ბიზნეს საიტები.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl font-bold mb-6">⚡</div>
+                    <h3 class="text-xl font-bold text-white mb-3">ულტრა-სწრაფი ვებ-საიტები</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">მობილურზე 100% ადაპტირებული, სწრაფი ჩატვირთვა 1 წამში. 1-Click WhatsApp და სატელეფონო ღილაკებით, რომ ვიზიტორი მყისიერად გადავიდეს ჩაწერაზე.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl font-bold mb-4">🤖</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Generative AI SEO (GEO)</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Schema.org სტრუქტურირებული კოდი, რომ ChatGPT-მ და Gemini-მ თქვენი ბიზნესი პირველ რიგში ურჩიონ მომხმარებლებს.</p>
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl font-bold mb-6">🤖</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Generative AI SEO (GEO)</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Schema.org (JSON-LD) სტრუქტურირებული კოდის ჩაშენება, რომ ChatGPT-მ, Gemini-მ და Google-მა თქვენი ბიზნესი პირველ რიგში ურჩიონ მომხმარებლებს.</p>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-slate-700 transition-all">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl font-bold mb-4">📍</div>
-                    <h3 class="text-lg font-bold text-white mb-2">Google Business & Maps</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Google Maps-ზე სრული პროფილი და ოპტიმიზაცია, რომ ლოკალურ ძებნაში ტოპ პოზიციები დაიკავოთ.</p>
+                <div class="p-8 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl font-bold mb-6">📍</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Google Business & Maps</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Google Maps-ზე პროფილის სრული გამართვა, ლოკალური SEO და რუკაზე პოზიციონირება თბილისსა და რუსთავში.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AI GEO Feature Highlight Section -->
-    <section id="ai-geo" class="py-16 bg-slate-900/50 border-y border-slate-800/80">
+    <!-- Why Us / Competitive Advantage Section -->
+    <section id="why-us" class="py-20 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-16">
+                <h2 class="text-2xl sm:text-3xl font-bold text-white">რატომ ირჩევენ GN Web & AI Studio-ს?</h2>
+                <p class="text-slate-400 text-xs sm:text-sm">რით განსხვავდება ჩვენი მიდგომა ჩვეულებრივი ფრილანსერებისა და ძვირიანი სააგენტოებისგან</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+                    <div class="text-cyan-400 font-extrabold text-2xl mb-2">48 სთ</div>
+                    <h4 class="font-bold text-white text-sm mb-2">მყისიერი გაშვება</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">სააგენტოების მსგავსად კვირობით არ გალოდინებთ. საიტი მზადაა 48 საათში.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+                    <div class="text-cyan-400 font-extrabold text-2xl mb-2">0 ₾</div>
+                    <h4 class="font-bold text-white text-sm mb-2">ყოველთვიური ჰოსტინგი</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">თანამედროვე Cloud ჰოსტინგის წყალობით არ იხდით ყოველთვიურ გადასახადს.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+                    <div class="text-cyan-400 font-extrabold text-2xl mb-2">1 წელი</div>
+                    <h4 class="font-bold text-white text-sm mb-2">ტექნიკური პატრონობა</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">არ გტოვებთ მარტო. უზრუნველვყოფთ საიტის გამართულობასა და განახლებებს.</p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
+                    <div class="text-cyan-400 font-extrabold text-2xl mb-2">BOG/TBC</div>
+                    <h4 class="font-bold text-white text-sm mb-2">მოქნილი გადახდა</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">ნაწილ-ნაწილ გადახდა ბანკის გადანაწილებით ან 30/70 პრინციპით.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI GEO Deep Dive Section -->
+    <section id="ai-geo" class="py-20 bg-slate-900/50 border-y border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
@@ -343,7 +380,7 @@
                             <li class="flex items-center font-semibold text-amber-300"><span class="text-amber-400 mr-2">✓</span> ყველაფერი BUSINESS PRO-დან</li>
                             <li class="flex items-center"><span class="text-amber-400 mr-2">✓</span> <strong>Meta (FB/IG) & TikTok Pixel</strong> ინტეგრაცია</li>
                             <li class="flex items-center"><span class="text-amber-400 mr-2">🎬</span> <strong>Reels / Shorts კონტენტ-სტრატეგიის</strong> კონსულტაცია</li>
-                            <li class="flex items-center"><span class="text-amber-400 mr-2">✓</span> გაფართოებული სექციები (ბლოგი, გალერეა, FAQ)</li>
+                            <li class="flex items-center"><span class="text-amber-400 mr-2">✓</span> გაფართოებული сექციები (ბლოგი, გალერეა, FAQ)</li>
                             <li class="flex items-center text-emerald-400"><span class="mr-2">🛡️</span> <strong>12 თვე VIP მხარდაჭერა</strong> (მაქს. 6 ცვლილება/თვეში)</li>
                         </ul>
                     </div>
